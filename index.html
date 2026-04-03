@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Website</title>
+  <meta name="description" content="Minimalist academic website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="#home">Home</a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#papers">Papers</a>
+        <a href="#projects">Projects</a>
+        <a href="#talks">Talks</a>
+        <a href="#cv">CV</a>
+        <a href="#blog">Blog</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero two-column">
+        <div class="hero-copy">
+          <p class="eyebrow">Academic website</p>
+          <h1>A minimalist student site for mathematics, probability, and related areas.</h1>
+          <p class="lead">
+            I’m an undergraduate at Harvard studying Mathematics and Statistics, with a secondary in Computer Science. I also hope to pursue the concurrent master’s in Applied Mathematics.
+          </p>
+          <p>
+            Broadly, I’m interested in the mathematics behind probability and statistics, stochastic processes, and applications to nearby fields such as theoretical computer science, finance, and games.
+          </p>
+          <p>
+            I’m also interested in the mathematical and combinatorial properties of random processes, including questions involving graphs, matrices, and related structures.
+          </p>
+          <p>
+            Outside of class, I enjoy playing poker and shooting trap and skeet.
+          </p>
+          <div class="tag-row" aria-label="Research interests">
+            <span>Probability &amp; Statistics</span>
+            <span>Stochastic Processes</span>
+            <span>Theoretical CS</span>
+            <span>Finance</span>
+            <span>Games</span>
+            <span>Random Graphs</span>
+            <span>Random Matrices</span>
+            <span>Combinatorics</span>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Profile photo placeholder">
+          <div class="profile-image-wrap">
+            <img src="assets/profile-placeholder.svg" alt="Profile photo placeholder" class="profile-image" />
+          </div>
+          <div class="profile-meta">
+            <h2>Photo placeholder</h2>
+            <p>Add a headshot later by replacing the placeholder image in <code>assets/</code>.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="papers" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Section</p>
+          <h2>Papers</h2>
+        </div>
+        <div class="card simple-card">
+          <p>Hopefully soon.</p>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Section</p>
+          <h2>Projects</h2>
+        </div>
+        <div class="card simple-card">
+          <p>To be added soon.</p>
+        </div>
+      </section>
+
+      <section id="talks" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Section</p>
+          <h2>Talks</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">April 2026</div>
+            <div class="timeline-body">
+              <h3>Distribution and Asymptotic Limit Behavior in the Robinson--Schensted Correspondence</h3>
+              <p class="timeline-context">Math 155R: Algebraic Combinatorics, Cambridge, MA</p>
+              <p>30-minute talk on the combinatorial algorithm for random permutations and its distribution.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">March 2026</div>
+            <div class="timeline-body">
+              <h3>Random Walks on Simplicial Complexes and Expansion Properties</h3>
+              <p class="timeline-context">CS 2253: Graduate Seminar on High-Dimensional Expanders, Cambridge, MA</p>
+              <p>75-minute seminar lecture on random walks on higher-dimensional structures and their relevance in modern theoretical computer science.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2026</div>
+            <div class="timeline-body">
+              <h3>Harvard Math Department Directed Reading Program</h3>
+              <p class="timeline-context">Reading in Random Matrix Theory</p>
+              <p>Directed reading presentation material can go here.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="cv" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Section</p>
+          <h2>CV</h2>
+        </div>
+        <div class="card cv-card">
+          <div class="cv-copy">
+            <p>
+              This section is set up to display a PDF CV directly on the page.
+            </p>
+            <p>
+              Replace <code>assets/cv-placeholder.pdf</code> with your actual CV PDF and keep the same filename, or update the embed path in the HTML.
+            </p>
+          </div>
+          <div class="pdf-frame-wrap">
+            <iframe src="assets/cv-placeholder.pdf" title="CV PDF preview"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Section</p>
+          <h2>Blog</h2>
+        </div>
+        <div class="card blog-card">
+          <p>
+            Blog to write about interesting topics from coursework, research, and readings.
+          </p>
+          <p>
+            The layout is ready for future posts, including posts with mathematics and LaTeX-style formatting when you decide to add them.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built as a simple static site for GitHub Pages.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
