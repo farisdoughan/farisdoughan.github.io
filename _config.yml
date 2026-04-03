@@ -1,9 +1,12 @@
 title: "Faris Doughan's Academic Website"
 author:
   name: "Faris Doughan"
-  email: "farisdoughan@example.com"
+  email: "Farisdoughan@college.harvard.edu"
 description: "Welcome to my academic website"
 baseurl: ""
 url: "https://farisdoughan.github.io"
 markdown: kramdown
 theme: minima
+plugins:
+  - github-pages
+  - jekyll-feed
