@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog</title>
+  <title>Blog · Faris Doughan</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon">☾</span>
-    <span class="icon-sun">☀</span>
-  </button>
-
-  <header class="site-header">
-    <div class="site-width nav-wrap">
-      <div class="site-title">Blog</div>
-      <nav class="site-nav">
+  <div class="site-shell">
+    <aside class="sidebar" aria-label="Site">
+      <div class="sidebar-header">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-moon">☾</span>
+          <span class="icon-sun">☀</span>
+        </button>
+      </div>
+      <a href="index.html" class="sidebar-name">Faris Doughan</a>
+      <div class="sidebar-photo">
+        <img
+          class="sidebar-img"
+          src="profile.jpg"
+          alt=""
+          width="220"
+          height="275"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
+        />
+        <div class="photo-placeholder" hidden>Photo: add profile.jpg</div>
+      </div>
+      <nav class="sidebar-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="papers.html">Papers</a>
         <a href="projects.html">Projects</a>
@@ -23,18 +36,22 @@
         <a href="cv.html">CV</a>
         <a href="blog.html" class="active">Blog</a>
       </nav>
-    </div>
-  </header>
+    </aside>
 
-  <main class="site-width page narrow">
-    <h1>Blog</h1>
-    <p>
-      Blog to write about interesting topics from coursework, research, and readings.
-    </p>
-    <p>
-      This can later be expanded to support longer mathematical writing, including LaTeX-heavy notes and course material.
-    </p>
-  </main>
+    <div class="content-area">
+      <main class="page">
+        <div class="page-inner">
+          <h1>Blog</h1>
+          <p>
+            Blog to write about interesting topics from coursework, research, and readings.
+          </p>
+          <p>
+            This can later be expanded to support longer mathematical writing, including LaTeX-heavy notes and course material.
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

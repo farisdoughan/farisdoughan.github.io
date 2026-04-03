@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <meta
+    name="description"
+    content="Faris Doughan — Harvard undergraduate in Mathematics and Statistics, secondary in Computer Science. Probability, stochastic processes, and related areas."
+  />
+  <title>Faris Doughan</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon">☾</span>
-    <span class="icon-sun">☀</span>
-  </button>
-
-  <header class="site-header">
-    <div class="site-width nav-wrap">
-      <div class="site-title">Home</div>
-      <nav class="site-nav">
+  <div class="site-shell">
+    <aside class="sidebar" aria-label="Site">
+      <div class="sidebar-header">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-moon">☾</span>
+          <span class="icon-sun">☀</span>
+        </button>
+      </div>
+      <a href="index.html" class="sidebar-name">Faris Doughan</a>
+      <div class="sidebar-photo">
+        <img
+          class="sidebar-img"
+          src="profile.jpg"
+          alt=""
+          width="220"
+          height="275"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
+        />
+        <div class="photo-placeholder" hidden>Photo: add profile.jpg</div>
+      </div>
+      <nav class="sidebar-nav" aria-label="Primary">
         <a href="index.html" class="active">Home</a>
         <a href="papers.html">Papers</a>
         <a href="projects.html">Projects</a>
@@ -23,43 +40,39 @@
         <a href="cv.html">CV</a>
         <a href="blog.html">Blog</a>
       </nav>
+    </aside>
+
+    <div class="content-area">
+      <main class="page">
+        <div class="page-inner page-inner--wide hero">
+          <h1>Undergraduate at Harvard University</h1>
+          <p>
+            I am an undergraduate at Harvard studying Mathematics and Statistics,
+            with a secondary in Computer Science. I also hope to pursue the
+            concurrent master's in Applied Mathematics.
+          </p>
+          <p>
+            My academic interests include the mathematics behind probability and
+            statistics, stochastic processes, and their applications to areas such
+            as theoretical computer science, finance, and games.
+          </p>
+          <p>
+            I am also interested in the mathematical and combinatorial properties
+            of random processes, including random graphs, random matrices, and
+            related probabilistic structures.
+          </p>
+          <p>
+            Outside of academics, I enjoy playing poker and shooting trap and skeet.
+          </p>
+          <p>
+            For full coursework and experiences, see the <a href="cv.html">CV</a>
+            section. Also check out the <a href="blog.html">Blog</a> section for
+            notes and writing on interesting topics.
+          </p>
+        </div>
+      </main>
     </div>
-  </header>
-
-  <main class="site-width page">
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Undergraduate at Harvard University</h1>
-        <p>
-          I am an undergraduate at Harvard studying Mathematics and Statistics,
-          with a secondary in Computer Science. I also hope to pursue the
-          concurrent master's in Applied Mathematics.
-        </p>
-        <p>
-          My academic interests include the mathematics behind probability and
-          statistics, stochastic processes, and their applications to areas such
-          as theoretical computer science, finance, and games.
-        </p>
-        <p>
-          I am also interested in the mathematical and combinatorial properties
-          of random processes, including random graphs, random matrices, and
-          related probabilistic structures.
-        </p>
-        <p>
-          Outside of academics, I enjoy playing poker and shooting trap and skeet.
-        </p>
-        <p>
-          For full coursework and experiences, see the <a href="cv.html">CV</a>
-          section. Also check out the <a href="blog.html">Blog</a> section for
-          notes and writing on interesting topics.
-        </p>
-      </div>
-
-      <div class="hero-photo">
-        <div class="photo-placeholder">Photo Placeholder</div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
