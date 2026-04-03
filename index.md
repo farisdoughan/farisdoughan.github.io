@@ -1,3 +1,7 @@
-# Welcome to My Homepage
+---
+layout: default
+---
 
-Hello and welcome to my personal website! Here, you'll find a collection of my projects, blogs, and other interesting things that I've been working on. I hope you enjoy your visit!
+# Welcome
+
+Hello, I'm Faris Doughan. I'm currently an undergraduate at Harvard University studying Mathematics and Statistics, with a secondary in Computer Science. I hope to pursue the concurrent Master's in Applied Mathematics.
