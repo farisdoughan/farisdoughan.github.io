@@ -11,16 +11,41 @@
   <div class="grid-container">
     <div class="picture">
       <div class="nav">
-        <img src="images/profile.png" height="450" alt="Faris Doughan" />
+        <img src="images/profile.png" alt="Faris Doughan" />
       </div>
     </div>
     <div class="header">
       <h1> Faris Doughan </h1>
+
       <p>
         I am a sophomore at Harvard College studying Mathematics and Statistics, with a secondary in Computer Science.
       </p>
+
       <p>
         (I haven't narrowed things down too much yet — ask me again in a year and you'll probably get a different list.)
+      </p>
+
+      <p>
+        As an undergraduate, I haven't narrowed down my interests too much, but a few directions I like to think about:
+      </p>
+
+      <ul class="pull-left">
+        <li>The mathematics behind probability and statistics</li>
+        <li>Stochastic processes, PDEs, and analysis</li>
+        <li>ML theory and the mathematics of data science</li>
+        <li>Theoretical computer science</li>
+        <li>Random graphs, random matrices, and combinatorics</li>
+        <li>Applications to finance, games, and other messy real-world systems</li>
+      </ul>
+
+      <p>
+        Here is my <a href="cv.pdf" target="_blank" rel="noopener">CV</a> [opens in a new tab].
+        For <strong>full coursework</strong> (excluding general education, first-year seminar, and humanities colloquium), use the
+        <a href="#Coursework" onclick="event.preventDefault(); openTabByTarget('Coursework');">Coursework</a> tab below.
+        For longer notes and rabbit holes, see the
+        <a href="#Blog" onclick="event.preventDefault(); openTabByTarget('Blog');">Blog</a> tab.
+        For a short résumé-style list of roles, see the
+        <a href="#CV" onclick="event.preventDefault(); openTabByTarget('CVsummary');">CV</a> tab.
       </p>
     </div>
   </div>
@@ -28,34 +53,19 @@
   <div class="grid-container">
     <div class="picture">
       <div class="tab">
-        <a href="index.html" class="tablinks active">Home</a>
-        <a href="papers.html" class="tablinks">Papers</a>
-        <a href="projects.html" class="tablinks">Projects</a>
-        <a href="talks.html" class="tablinks">Talks</a>
-        <a href="teaching.html" class="tablinks">Teaching</a>
-        <a href="coursework.html" class="tablinks">Coursework</a>
-        <a href="cv.html" class="tablinks">CV</a>
-        <a href="blog.html" class="tablinks">Blog</a>
+        <button type="button" class="tablinks" data-target="Bio" onclick="opentab(event)">Bio</button>
+        <button type="button" class="tablinks" data-target="Papers" onclick="opentab(event)">Papers</button>
+        <button type="button" class="tablinks" data-target="Projects" onclick="opentab(event)">Projects</button>
+        <button type="button" class="tablinks" data-target="Talks" onclick="opentab(event)">Talks</button>
+        <button type="button" class="tablinks" data-target="Teaching" onclick="opentab(event)">Teaching</button>
+        <button type="button" class="tablinks" data-target="Coursework" onclick="opentab(event)">Coursework</button>
+        <button type="button" class="tablinks" data-target="CVsummary" onclick="opentab(event)">CV</button>
+        <button type="button" class="tablinks" data-target="Blog" onclick="opentab(event)">Blog</button>
       </div>
     </div>
     <div class="header">
-      <div class="tabcontent">
-        <p>As an undergraduate, I haven't narrowed down my interests too much, but a few directions I like to think about:</p>
-        <ul class="pull-left">
-          <li>The mathematics behind probability and statistics</li>
-          <li>Stochastic processes, PDEs, and analysis</li>
-          <li>ML theory and the mathematics of data science</li>
-          <li>Theoretical computer science</li>
-          <li>Random graphs, random matrices, and combinatorics</li>
-          <li>Applications to finance, games, and other messy real-world systems</li>
-        </ul>
-        <p>
-          For <strong>full coursework</strong> (excluding gen eds), see the
-          <a href="coursework.html">coursework</a> page. For longer notes and rabbit holes, check the
-          <a href="blog.html">blog</a>. For a résumé-style list of roles, see the
-          <a href="cv.html">CV</a>.
-        </p>
 
+      <div id="Bio" class="tabcontent" style="display:none">
         <h2>Bio</h2>
         <p>
           I am originally from Jordan, where I graduated from <strong>King's Academy</strong> in 2024 before coming to Harvard.
@@ -65,7 +75,155 @@
           If you plan to visit Jordan (or already have), feel free to reach out — I am always happy to chat or share recommendations.
         </p>
       </div>
+
+      <div id="Papers" class="tabcontent" style="display:none">
+        <h2>Papers</h2>
+        <p>I appreciate your confidence in me for clicking on this tab.</p>
+        <p>I do not have any papers yet.</p>
+        <p>My first research experience will be this summer; I hope to eventually have something to put here.</p>
+      </div>
+
+      <div id="Projects" class="tabcontent" style="display:none">
+        <h2>Projects</h2>
+        <p>To be added soon.</p>
+      </div>
+
+      <div id="Talks" class="tabcontent" style="display:none">
+        <h2>Talks</h2>
+        <p>
+          <strong>Distribution and asymptotic limit behavior in the Robinson–Schensted correspondence</strong>,
+          Apr 2026 · Math 155R · Algebraic combinatorics · Cambridge, MA.
+          Combinatorial algorithm for random permutations and its distribution.
+          <em>Video to be uploaded when available.</em>
+        </p>
+        <p>
+          <strong>Random walks on simplicial complexes and expansion properties</strong>,
+          Mar 2026 · CS 2253 · Graduate seminar on high-dimensional expanders · Cambridge, MA.
+          Higher-dimensional random walks and connections to theoretical computer science.
+        </p>
+      </div>
+
+      <div id="Teaching" class="tabcontent" style="display:none">
+        <h2>Teaching</h2>
+        <p>I like explaining things.</p>
+        <p>
+          As a course assistant, I help run lectures and problem sessions, hold office hours, grade, and answer student questions.
+        </p>
+        <h4>Course assistant</h4>
+        <ul class="pull-left">
+          <li>MATH 154 — Probability Theory — Spring 2026</li>
+          <li>MATH 136 — Differential Geometry — Fall 2026</li>
+        </ul>
+        <p>
+          I have also been a teaching assistant for a generative-AI workshop series for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, and ethics), with hands-on Python and Colab support.
+        </p>
+      </div>
+
+      <div id="Coursework" class="tabcontent" style="display:none">
+        <h2>Coursework</h2>
+        <p>
+          Full coursework in concentration-related areas, excluding general education, first-year seminar, and humanities colloquium. No grades listed.
+        </p>
+        <h4>Fall 2024</h4>
+        <ul class="pull-left">
+          <li>MATH 25A — Theoretical Linear Algebra and Real Analysis I</li>
+          <li>PHYSICS 15A — Introductory Mechanics and Relativity</li>
+        </ul>
+        <h4>Spring 2025</h4>
+        <ul class="pull-left">
+          <li>MATH 55B — Studies in Real and Complex Analysis</li>
+          <li>PHYSICS 15B — Introductory Electromagnetism</li>
+        </ul>
+        <h4>Fall 2025</h4>
+        <ul class="pull-left">
+          <li>APMTH 210 — Algebraic Fundamentals of Representing Data</li>
+          <li>COMPSCI 1210 — Introduction to Theoretical Computer Science</li>
+          <li>MATH 136 — Differential Geometry</li>
+          <li>STAT 210 — Probability I</li>
+        </ul>
+        <h4>Spring 2026</h4>
+        <ul class="pull-left">
+          <li>COMPSCI 2253 — Seminar on Pseudorandomness &amp; High-Dimensional Expanders</li>
+          <li>MATH 155R — Combinatorics</li>
+          <li>STAT 111 — Introduction to Statistical Inference</li>
+          <li>STAT 212 — Probability II — stochastic processes</li>
+        </ul>
+        <h4>Fall 2026 (planned)</h4>
+        <ul class="pull-left">
+          <li>APMTH 205 — Advanced Scientific Computing: Numerical Methods</li>
+          <li>MATH 114 — Analysis of Function Spaces, Measure and Integration</li>
+          <li>MATH 269Z — Stochastic Analysis and Its Applications</li>
+          <li>STAT 291 — Random High-Dimensional Optimization</li>
+        </ul>
+      </div>
+
+      <div id="CVsummary" class="tabcontent" style="display:none">
+        <h2>CV</h2>
+        <p>Here is my <a href="cv.pdf" target="_blank" rel="noopener">CV</a> [opens in a new tab].</p>
+        <p>A very short summary of what I have been up to:</p>
+
+        <h4>Undergraduate researcher</h4>
+        <p>
+          Harvard SEAS · Cambridge, MA<br />
+          Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.
+        </p>
+
+        <h4>Course assistant</h4>
+        <p>
+          Harvard Mathematics · Cambridge, MA<br />
+          I like to teach. See the <a href="#" onclick="event.preventDefault(); openTabByTarget('Teaching');">Teaching</a> tab for courses and details.
+        </p>
+
+        <h4>Teaching assistant</h4>
+        <p>
+          Harvard Data Science Initiative · Cambridge, MA<br />
+          Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).
+        </p>
+
+        <h4>Harvard Student Agencies — tutor</h4>
+        <p>
+          Sep 2025 — present · Cambridge, MA<br />
+          SAT and math tutoring for high school students.
+        </p>
+
+        <h4>Library technology &amp; digital reserves</h4>
+        <p>
+          Harvard Library Assistive Technology Center · Cambridge, MA<br />
+          Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.
+        </p>
+      </div>
+
+      <div id="Blog" class="tabcontent" style="display:none">
+        <h2>Blog</h2>
+        <p>Notes and half-formed ideas from coursework, research, and things I read.</p>
+        <p>Eventually this might grow into longer posts (maybe even LaTeX-heavy ones).</p>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    function opentab(evt) {
+      var name = evt.currentTarget.getAttribute("data-target");
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(name).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    function openTabByTarget(name) {
+      var btn = document.querySelector('.tablinks[data-target="' + name + '"]');
+      if (btn) {
+        opentab({ currentTarget: btn });
+      }
+    }
+  </script>
 </body>
 </html>
