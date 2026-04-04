@@ -2,6 +2,10 @@
   const root = document.documentElement;
   const button = document.getElementById("theme-toggle");
 
+  function paintRootBg(theme) {
+    root.style.backgroundColor = theme === "dark" ? "#1a1b1e" : "#f5f6f8";
+  }
+
   function setTheme(theme) {
     if (theme === "dark") {
       root.setAttribute("data-theme", "dark");
@@ -10,6 +14,7 @@
       root.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
     }
+    paintRootBg(theme);
   }
 
   const savedTheme = localStorage.getItem("theme");

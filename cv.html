@@ -3,6 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        var dark =
+          t === "dark" ||
+          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+        var r = document.documentElement;
+        if (dark) {
+          r.setAttribute("data-theme", "dark");
+          r.style.backgroundColor = "#1a1b1e";
+        } else {
+          r.removeAttribute("data-theme");
+          r.style.backgroundColor = "#f5f6f8";
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="theme-color" content="#2962ff" />
   <title>CV · Faris Doughan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,23 +54,164 @@
 
   <main class="site-main">
     <div class="container section-pad">
-      <article class="page-article">
+      <article class="page-article page-article--cv">
         <header class="page-header">
           <h1>CV</h1>
         </header>
-        <p>
-          When your CV is finalized, add <code>cv.pdf</code> to the repository root. It will appear
-          in the frame below. Until then, see the <a href="index.html">home page</a> and
-          <a href="talks.html">talks</a> for background.
+
+        <p class="cv-pdf-lead">
+          For a PDF version, <a href="cv.pdf">click here</a>.
         </p>
 
-        <div class="pdf-frame">
-          <iframe src="cv.pdf" title="CV PDF"></iframe>
+        <div class="cv-binder-wrap">
+          <div class="cv-binder" role="tablist" aria-label="CV sections">
+            <button
+              type="button"
+              class="cv-bubble is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="cv-panel-work"
+              id="tab-work"
+              data-panel="work"
+            >
+              Experience
+            </button>
+            <button
+              type="button"
+              class="cv-bubble"
+              role="tab"
+              aria-selected="false"
+              aria-controls="cv-panel-course"
+              id="tab-course"
+              data-panel="course"
+            >
+              Coursework
+            </button>
+            <button
+              type="button"
+              class="cv-bubble"
+              role="tab"
+              aria-selected="false"
+              aria-controls="cv-panel-extra"
+              id="tab-extra"
+              data-panel="extra"
+            >
+              Extracurriculars
+            </button>
+            <button
+              type="button"
+              class="cv-bubble"
+              role="tab"
+              aria-selected="false"
+              aria-controls="cv-panel-lang"
+              id="tab-lang"
+              data-panel="lang"
+            >
+              Languages
+            </button>
+          </div>
+
+          <div class="cv-panels">
+            <div
+              class="cv-panel is-active"
+              id="cv-panel-work"
+              role="tabpanel"
+              aria-labelledby="tab-work"
+            >
+              <div class="cv-item">
+                <h3 class="cv-item-title">Undergraduate researcher</h3>
+                <p class="cv-item-meta">Feb 2026 — present · Harvard School of Engineering &amp; Applied Sciences · Cambridge, MA</p>
+                <p>
+                  Work on generalizing diffusion models (probabilistic generative models that learn data distributions by reversing a noise process).
+                  Exploring theoretical extensions together with implementations and empirical evaluation. Advised by Dr.&nbsp;John Vastola and
+                  Prof.&nbsp;Sam Gershman.
+                </p>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Teaching assistant</h3>
+                <p class="cv-item-meta">Mar 2026 — present · Harvard Data Science Initiative · Cambridge, MA</p>
+                <ul class="cv-bullets">
+                  <li>TA for a generative AI workshop series for PhD students and postdocs (75+ attendees): LLMs, Hugging Face, embeddings, RAG, agents, AI ethics.</li>
+                  <li>Support with Python/Colab/API workflows and weekly exercises.</li>
+                </ul>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Course assistant</h3>
+                <p class="cv-item-meta">Jan 2026 — present · Harvard University · Cambridge, MA</p>
+                <p>
+                  Math 154: Probability Theory (Spring 2026) and Math 136: Differential Geometry (Fall 2026): lecture support, office hours, grading, and general instructional support.
+                </p>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">AI &amp; advanced data analytics intern</h3>
+                <p class="cv-item-meta">Jun 2025 — Aug 2025 · Arab Bank · Amman, Jordan</p>
+                <ul class="cv-bullets">
+                  <li>Improved production ML model precision from 80% to 94% through feature engineering.</li>
+                  <li>Built Power BI and Matplotlib dashboards for model outputs and 20+ KPIs across international branches.</li>
+                </ul>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Technology assistant &amp; digital reserves assistant</h3>
+                <p class="cv-item-meta">Oct 2024 — Dec 2025 · Harvard Library Assistive Technology Center · Cambridge, MA</p>
+                <ul class="cv-bullets">
+                  <li>Digitized materials and produced 125+ accessible PDFs (Adobe OCR, Scantailor, Acrobat, Mathpix).</li>
+                  <li>Sped up math textbook remediation with a ChatGPT-based workflow for table images to LaTeX.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cv-panel" id="cv-panel-course" role="tabpanel" aria-labelledby="tab-course" hidden>
+              <p class="cv-item-meta cv-item-meta--block">Harvard University — selected coursework</p>
+              <p>
+                Studies in Real &amp; Complex Analysis (Math 55); Measure Theory; Probability I &amp; II (graduate); Statistical Inference;
+                Stochastic Analysis and Applications (graduate); Random High-Dimensional Optimization (graduate); Algebraic Fundamentals of Data (graduate);
+                Advanced Scientific Computing — Numerical Methods (graduate).
+              </p>
+              <p>Intend to pursue the concurrent S.M. in Applied Mathematics.</p>
+            </div>
+
+            <div class="cv-panel" id="cv-panel-extra" role="tabpanel" aria-labelledby="tab-extra" hidden>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Harvard Mathematics Directed Reading Program</h3>
+                <p class="cv-item-meta">Jan 2026 — present · Reading in random matrix theory (Spring 2026)</p>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Harvard Student Agencies</h3>
+                <p class="cv-item-meta">Nov 2025 — present · SAT &amp; STEM tutor for high school students</p>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Other involvement</h3>
+                <p>
+                  Harvard Shooting Club (trap &amp; skeet), Harvard Poker Club, Harvard Open Data Project, Harvard Undergraduate Mathematics Association,
+                  Society of Arab Students, Group for Undergraduates in Statistics; Arrowstreet Capital Quant Symposium invitee.
+                </p>
+              </div>
+            </div>
+
+            <div class="cv-panel" id="cv-panel-lang" role="tabpanel" aria-labelledby="tab-lang" hidden>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Technical</h3>
+                <p>Python, Java, JavaScript, R, SQL, HTML/CSS, Jupyter, Tableau, Power BI</p>
+              </div>
+              <div class="cv-item">
+                <h3 class="cv-item-title">Human languages</h3>
+                <p>English (native), Arabic (native), Spanish (proficient)</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <details class="cv-embed-details">
+          <summary>Embedded PDF</summary>
+          <div class="pdf-frame pdf-frame--cv">
+            <iframe src="cv.pdf" title="CV PDF"></iframe>
+          </div>
+        </details>
       </article>
     </div>
   </main>
 
   <script src="script.js"></script>
+  <script src="cv.js"></script>
 </body>
 </html>

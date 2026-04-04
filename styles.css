@@ -37,6 +37,12 @@ html[data-theme="dark"] {
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -46,7 +52,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.65;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: color 0.15s ease;
 }
 
 a {
@@ -326,38 +332,50 @@ html[data-theme="dark"] .avatar-circle {
   color: var(--text);
 }
 
+.page-header--plain {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1.75rem;
+}
+
 .page-article > p {
   font-size: 1.0625rem;
   line-height: 1.75;
   margin: 0 0 1rem;
 }
 
-/* Talks / list entries —— Academic card accent */
-.entry {
-  margin: 0 0 1.75rem;
-  padding: 0 0 1.75rem 1.15rem;
-  border-left: 4px solid var(--primary);
-  border-bottom: 1px solid var(--line);
+/* Talks — minimal list (no bars/boxes) */
+.talks-list {
+  max-width: 640px;
 }
 
-.entry:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.talk-simple {
+  margin-bottom: 2.35rem;
+}
+
+.talk-simple:last-child {
   margin-bottom: 0;
 }
 
-.entry h2 {
+.talk-simple h2 {
   font-family: var(--font-heading);
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 0 0 0.5rem;
-  line-height: 1.4;
+  margin: 0 0 0.3rem;
+  line-height: 1.45;
   color: var(--text);
 }
 
-.entry p {
+.talk-meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0 0 0.55rem;
+  line-height: 1.45;
+}
+
+.talk-simple .talk-body {
   font-size: 1.02rem;
-  line-height: 1.7;
+  line-height: 1.72;
   margin: 0;
 }
 
@@ -410,4 +428,166 @@ code {
   font-size: 1.35rem;
   font-weight: 600;
   margin: 0 0 1rem;
+}
+
+/* —— CV binder (tab bubbles + panels) —— */
+.page-article--cv {
+  max-width: 880px;
+}
+
+.cv-pdf-lead {
+  font-size: 1.0625rem;
+  margin: 0 0 1.5rem;
+}
+
+.cv-binder-wrap {
+  margin-top: 0.5rem;
+}
+
+.cv-binder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.cv-bubble {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cv-bubble:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.cv-bubble.is-active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: 0 0 0 1px var(--primary-soft);
+}
+
+.cv-panels {
+  min-height: 4rem;
+}
+
+.cv-panel > p + p {
+  margin-top: 1rem;
+}
+
+.cv-panel {
+  animation: cvFade 0.2s ease;
+}
+
+@keyframes cvFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cv-item {
+  margin-bottom: 1.85rem;
+}
+
+.cv-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-item-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--text);
+}
+
+.cv-item-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+  line-height: 1.45;
+}
+
+.cv-item-meta--block {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.cv-item p {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  margin: 0;
+}
+
+.cv-bullets {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.cv-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+.cv-embed-details {
+  margin-top: 2.75rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.cv-embed-details summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  list-style: none;
+}
+
+.cv-embed-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-embed-details summary::after {
+  content: " +";
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.cv-embed-details[open] summary::after {
+  content: " −";
+}
+
+.cv-embed-details summary:hover {
+  color: var(--primary);
+}
+
+.cv-embed-details .pdf-frame {
+  margin-top: 1rem;
+}
+
+.pdf-frame--cv iframe {
+  height: min(85vh, 900px);
 }

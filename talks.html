@@ -3,6 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        var dark =
+          t === "dark" ||
+          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+        var r = document.documentElement;
+        if (dark) {
+          r.setAttribute("data-theme", "dark");
+          r.style.backgroundColor = "#1a1b1e";
+        } else {
+          r.removeAttribute("data-theme");
+          r.style.backgroundColor = "#f5f6f8";
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="theme-color" content="#2962ff" />
   <title>Talks · Faris Doughan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,26 +55,28 @@
   <main class="site-main">
     <div class="container section-pad">
       <article class="page-article">
-        <header class="page-header">
+        <header class="page-header page-header--plain">
           <h1>Talks</h1>
         </header>
 
-        <div class="entry">
-          <h2>Distribution and Asymptotic Limit Behavior in the Robinson–Schensted Correspondence</h2>
-          <p class="meta">April 2026 · Math 155R: Algebraic Combinatorics · Cambridge, MA</p>
-          <p>Delivered a 30-minute talk on the combinatorial algorithm for random permutations and its distribution.</p>
-        </div>
+        <div class="talks-list">
+          <div class="talk-simple">
+            <h2>Distribution and Asymptotic Limit Behavior in the Robinson–Schensted Correspondence</h2>
+            <p class="talk-meta">April 2026 · Math 155R: Algebraic Combinatorics · Cambridge, MA</p>
+            <p class="talk-body">Delivered a 30-minute talk on the combinatorial algorithm for random permutations and its distribution.</p>
+          </div>
 
-        <div class="entry">
-          <h2>Random Walks on Simplicial Complexes and Expansion Properties</h2>
-          <p class="meta">March 2026 · CS 2253: Graduate Seminar on High-Dimensional Expanders · Cambridge, MA</p>
-          <p>Delivered a 75-minute seminar lecture on higher-dimensional random walks and their relevance in modern theoretical computer science.</p>
-        </div>
+          <div class="talk-simple">
+            <h2>Random Walks on Simplicial Complexes and Expansion Properties</h2>
+            <p class="talk-meta">March 2026 · CS 2253: Graduate Seminar on High-Dimensional Expanders · Cambridge, MA</p>
+            <p class="talk-body">Delivered a 75-minute seminar lecture on higher-dimensional random walks and their relevance in modern theoretical computer science.</p>
+          </div>
 
-        <div class="entry">
-          <h2>Harvard Math Department Directed Reading Program</h2>
-          <p class="meta">2026 · Harvard Mathematics Department · Cambridge, MA</p>
-          <p>Reading in random matrix theory.</p>
+          <div class="talk-simple">
+            <h2>Harvard Math Department Directed Reading Program</h2>
+            <p class="talk-meta">2026 · Harvard Mathematics Department · Cambridge, MA</p>
+            <p class="talk-body">Reading in random matrix theory.</p>
+          </div>
         </div>
       </article>
     </div>

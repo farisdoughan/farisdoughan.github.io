@@ -3,6 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        var dark =
+          t === "dark" ||
+          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+        var r = document.documentElement;
+        if (dark) {
+          r.setAttribute("data-theme", "dark");
+          r.style.backgroundColor = "#1a1b1e";
+        } else {
+          r.removeAttribute("data-theme");
+          r.style.backgroundColor = "#f5f6f8";
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta
     name="description"
     content="Faris Doughan — Harvard undergraduate in Mathematics and Statistics, secondary in Computer Science. Probability, stochastic processes, and related areas."
@@ -45,14 +63,14 @@
           <div class="avatar-wrap">
             <img
               class="avatar-circle"
-              src="profile.jpg"
+              src="profile.png"
               alt=""
               width="220"
               height="220"
               loading="lazy"
               onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
             />
-            <div class="photo-placeholder" hidden>Photo: add profile.jpg</div>
+            <div class="photo-placeholder" hidden>Photo: add profile.png</div>
           </div>
           <div class="portrait-title">
             <p class="profile-name">Faris Doughan</p>
