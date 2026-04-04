@@ -3,7 +3,7 @@
   const button = document.getElementById("theme-toggle");
 
   function paintRootBg(theme) {
-    root.style.backgroundColor = theme === "dark" ? "#1a1b1e" : "#f5f6f8";
+    root.style.backgroundColor = theme === "dark" ? "#1e1e1e" : "#fafafa";
   }
 
   function setTheme(theme) {

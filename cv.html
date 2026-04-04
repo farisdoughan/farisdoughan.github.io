@@ -13,124 +13,78 @@
         var r = document.documentElement;
         if (dark) {
           r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1a1b1e";
+          r.style.backgroundColor = "#1e1e1e";
         } else {
           r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#f5f6f8";
+          r.style.backgroundColor = "#fafafa";
         }
       } catch (e) {}
     })();
   </script>
-  <meta name="theme-color" content="#2962ff" />
   <title>CV · Faris Doughan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-    rel="stylesheet"
-  />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="site-navbar" aria-label="Main navigation">
-    <div class="container navbar-row">
+    <div class="navbar-row">
       <a class="navbar-brand" href="index.html">Faris Doughan</a>
       <ul class="navbar-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="papers.html">Papers</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="talks.html">Talks</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="coursework.html">Coursework</a></li>
         <li><a href="cv.html" class="active">CV</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <div class="navbar-actions">
-        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="icon-moon">☾</span>
-          <span class="icon-sun">☀</span>
-        </button>
-      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="icon-moon">☾</span>
+        <span class="icon-sun">☀</span>
+      </button>
     </div>
   </nav>
 
-  <main class="site-main">
-    <div class="container section-pad">
-      <article class="page-article page-article--cv">
-        <header class="page-header page-header--cv">
-          <h1>CV</h1>
-        </header>
+  <main class="container page-article">
+    <header class="page-header page-header--sub">
+      <h1>CV</h1>
+    </header>
 
-        <div class="cv-pdf-hero">
-          <a class="btn-pdf" href="cv.pdf" download>Download CV (PDF)</a>
-          <a class="cv-pdf-subtle" href="cv.pdf" target="_blank" rel="noopener">Open in browser</a>
-        </div>
+    <p class="cv-lead">
+      <a class="btn-link" href="cv.pdf" target="_blank" rel="noopener">Open full CV (PDF)</a>
+      <span style="font-size: 13px; color: var(--muted)">opens in a new tab — no automatic download</span>
+    </p>
 
-        <section class="cv-block" aria-labelledby="cv-exp-heading">
-          <h2 id="cv-exp-heading" class="cv-section-title">Experience</h2>
-          <ul class="cv-role-list">
-            <li class="cv-role">
-              <span class="cv-role-title">Undergraduate researcher</span>
-              <span class="cv-role-meta">Feb 2026 — present · Harvard SEAS · Cambridge, MA</span>
-              <span class="cv-role-line">Diffusion models and generative ML; theory, code, and experiments with Dr.&nbsp;Vastola and Prof.&nbsp;Gershman.</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">Teaching assistant</span>
-              <span class="cv-role-meta">Mar 2026 — present · Harvard Data Science Initiative · Cambridge, MA</span>
-              <span class="cv-role-line">Generative-AI workshop series for PhD students and postdocs (LLMs, embeddings, RAG, agents, ethics) plus lab support.</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">Course assistant</span>
-              <span class="cv-role-meta">Jan 2026 — present · Harvard University · Cambridge, MA</span>
-              <span class="cv-role-line">Math 154 (Spring 2026) and Math 136 (Fall 2026): class support, office hours, and grading.</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">AI &amp; advanced data analytics intern</span>
-              <span class="cv-role-meta">Jun 2025 — Aug 2025 · Arab Bank · Amman, Jordan</span>
-              <span class="cv-role-line">Improved production model precision (80% → 94%) and built KPI dashboards across branches.</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">Technology &amp; digital reserves assistant</span>
-              <span class="cv-role-meta">Oct 2024 — Dec 2025 · Harvard Library Assistive Technology Center · Cambridge, MA</span>
-              <span class="cv-role-line">Accessible PDF production and faster math-text remediation (including LaTeX workflows).</span>
-            </li>
-          </ul>
-        </section>
+    <p class="cv-summary-intro">A very short summary of what I have been up to:</p>
 
-        <section class="cv-block" aria-labelledby="cv-course-heading">
-          <h2 id="cv-course-heading" class="cv-section-title">Coursework</h2>
-          <p class="cv-prose">
-            Real &amp; complex analysis (Math 55); measure theory; graduate probability I–II; statistical inference; stochastic analysis;
-            random high-dimensional optimization; algebraic fundamentals of data; graduate numerical methods. Intending the concurrent S.M. in applied mathematics.
-          </p>
-        </section>
+    <div class="cv-mini">
+      <div class="cv-mini-title">Undergraduate researcher</div>
+      <div class="cv-mini-meta">Harvard SEAS · Cambridge, MA</div>
+      <div class="cv-mini-desc">Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.</div>
+    </div>
 
-        <section class="cv-block" aria-labelledby="cv-extra-heading">
-          <h2 id="cv-extra-heading" class="cv-section-title">Extracurriculars</h2>
-          <ul class="cv-role-list cv-role-list--compact">
-            <li class="cv-role">
-              <span class="cv-role-title">Harvard Math Directed Reading Program</span>
-              <span class="cv-role-meta">2026 · Random matrix theory</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">Harvard Student Agencies</span>
-              <span class="cv-role-meta">2025 — present · SAT &amp; STEM tutoring</span>
-            </li>
-            <li class="cv-role">
-              <span class="cv-role-title">Other</span>
-              <span class="cv-role-line">Shooting club (trap &amp; skeet), poker club, open data project, HUMA, SAS, GUS; Arrowstreet Quant Symposium invitee.</span>
-            </li>
-          </ul>
-        </section>
+    <div class="cv-mini">
+      <div class="cv-mini-title">Course assistant</div>
+      <div class="cv-mini-meta">Harvard Mathematics · Cambridge, MA</div>
+      <div class="cv-mini-desc">I like to teach. See the <a href="teaching.html">teaching</a> page for courses and details.</div>
+    </div>
 
-        <section class="cv-block" aria-labelledby="cv-lang-heading">
-          <h2 id="cv-lang-heading" class="cv-section-title">Languages &amp; tools</h2>
-          <p class="cv-prose cv-prose--tight">
-            <strong class="cv-label">Technical:</strong> Python, Java, JavaScript, R, SQL, HTML/CSS, Jupyter, Tableau, Power BI.
-          </p>
-          <p class="cv-prose cv-prose--tight">
-            <strong class="cv-label">Spoken:</strong> English (native), Arabic (native), Spanish (proficient).
-          </p>
-        </section>
-      </article>
+    <div class="cv-mini">
+      <div class="cv-mini-title">Teaching assistant</div>
+      <div class="cv-mini-meta">Harvard Data Science Initiative · Cambridge, MA</div>
+      <div class="cv-mini-desc">Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).</div>
+    </div>
+
+    <div class="cv-mini">
+      <div class="cv-mini-title">Harvard Student Agencies — tutor</div>
+      <div class="cv-mini-meta">Sep 2025 — present · Cambridge, MA</div>
+      <div class="cv-mini-desc">SAT and math tutoring for high school students.</div>
+    </div>
+
+    <div class="cv-mini">
+      <div class="cv-mini-title">Library technology &amp; digital reserves</div>
+      <div class="cv-mini-meta">Harvard Library Assistive Technology Center · Cambridge, MA</div>
+      <div class="cv-mini-desc">Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.</div>
     </div>
   </main>
 

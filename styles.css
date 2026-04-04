@@ -1,36 +1,34 @@
-/* Academic-inspired static site (separate pages) —
-   reference: https://github.com/sloede/academic-pages-demo */
+/* Minimal academic vibe inspired by https://github.com/seigal/seigal.github.io —
+   separate pages, Arial-scale type, small whimsical touches. */
 
 :root {
-  --primary: #2962ff;
-  --primary-soft: rgba(41, 98, 255, 0.09);
-  --primary-hover: #1e56e8;
-  --bg: #f5f6f8;
+  --accent: #2e7d32;
+  --accent-soft: rgba(46, 125, 50, 0.12);
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+  --bg: #fafafa;
   --surface: #ffffff;
-  --text: #212529;
-  --muted: #6c757d;
-  --line: #e2e5e9;
-  --link: var(--primary);
-  --link-hover: var(--primary-hover);
-  --nav-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-  --sheet-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --font-sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-heading: "Montserrat", var(--font-sans);
+  --text: #1a1a1a;
+  --muted: #555;
+  --line: #ddd;
+  --nav-bg: #eeeeee;
+  --nav-hover: #ddd;
+  --nav-active: #c6d8ec;
 }
 
 html[data-theme="dark"] {
-  --primary: #6b9fff;
-  --primary-soft: rgba(107, 159, 255, 0.14);
-  --primary-hover: #8cb4ff;
-  --bg: #1a1b1e;
-  --surface: #232429;
-  --text: #e9ecef;
-  --muted: #9aa0a8;
-  --line: #35363d;
-  --link: var(--primary);
-  --link-hover: var(--primary-hover);
-  --nav-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
-  --sheet-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --accent: #81c784;
+  --accent-soft: rgba(129, 199, 132, 0.15);
+  --link: #90caf9;
+  --link-hover: #bbdefb;
+  --bg: #1e1e1e;
+  --surface: #252525;
+  --text: #ececec;
+  --muted: #b0b0b0;
+  --line: #404040;
+  --nav-bg: #2d2d2d;
+  --nav-hover: #3d3d3d;
+  --nav-active: #37474f;
 }
 
 * {
@@ -51,10 +49,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.65;
-  transition: color 0.15s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  transition: color 0.12s ease;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -70,500 +68,343 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: max(20px, 4vw);
-  padding-right: max(20px, 4vw);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px max(16px, 3vw) 48px;
 }
 
-/* —— Navbar —— */
+/* —— Nav (simple bar) —— */
 .site-navbar {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
-  box-shadow: var(--nav-shadow);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 50;
 }
 
 .navbar-row {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 10px max(16px, 3vw);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 8px 12px;
   justify-content: space-between;
-  gap: 10px 20px;
-  padding: 0.85rem 0;
-  min-height: 3.25rem;
 }
 
 .navbar-brand {
-  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1875rem;
+  font-size: 15px;
   color: var(--text);
-  letter-spacing: -0.02em;
 }
 
 .navbar-brand:hover {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .navbar-nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 1 1 auto;
+  flex: 1;
   justify-content: center;
-}
-
-@media (max-width: 860px) {
-  .navbar-nav {
-    order: 3;
-    flex-basis: 100%;
-    justify-content: flex-start;
-    padding-top: 10px;
-    margin-top: 4px;
-    border-top: 1px solid var(--line);
-  }
 }
 
 .navbar-nav a {
   display: block;
-  padding: 0.45rem 0.75rem;
+  padding: 6px 9px;
+  font-size: 14px;
   color: var(--muted);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .navbar-nav a:hover {
+  background: var(--nav-hover);
   color: var(--text);
   text-decoration: none;
 }
 
-html[data-theme="dark"] .navbar-nav a:hover {
-  color: var(--text);
-}
-
 .navbar-nav a.active {
-  color: var(--primary);
+  background: var(--nav-active);
+  color: var(--text);
   font-weight: 600;
-}
-
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
 }
 
 .theme-toggle {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--bg);
   color: var(--text);
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--primary);
-  transform: translateY(-1px);
+  font-size: 14px;
 }
 
 .icon-sun,
 .icon-moon {
   position: absolute;
-  font-size: 1rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease;
 }
 
 html[data-theme="dark"] .icon-sun {
   opacity: 1;
-  transform: scale(1);
 }
-
 html[data-theme="dark"] .icon-moon {
   opacity: 0;
-  transform: scale(0.7);
 }
-
 html:not([data-theme="dark"]) .icon-sun {
   opacity: 0;
-  transform: scale(0.7);
 }
-
 html:not([data-theme="dark"]) .icon-moon {
   opacity: 1;
-  transform: scale(1);
 }
 
-/* —— Main —— */
-.site-main {
-  min-height: calc(100vh - 120px);
-}
-
-.section-pad {
-  padding-top: 2.5rem;
-  padding-bottom: 4.5rem;
-}
-
-/* —— Home: content sheet (Academic section card) —— */
-.home-sheet {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--sheet-shadow);
-  padding: clamp(1.75rem, 5vw, 3rem);
-}
-
-.home-grid {
+/* —— Home (Seigal-ish grid) —— */
+.home-top {
   display: grid;
-  gap: 2rem;
+  gap: 20px;
   align-items: start;
+  margin-bottom: 28px;
 }
 
-@media (min-width: 992px) {
-  .home-grid {
-    grid-template-columns: minmax(200px, 270px) minmax(0, 1fr);
-    gap: 3rem;
+@media (min-width: 700px) {
+  .home-top {
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
   }
 }
 
-.profile-card {
+.home-photo-box {
+  background: var(--nav-bg);
+  padding: 12px;
+  border: 1px solid var(--line);
   text-align: center;
 }
 
-@media (min-width: 992px) {
-  .profile-card {
-    position: sticky;
-    top: 5.5rem;
-  }
-}
-
-.avatar-wrap {
-  margin: 0 auto 1.15rem;
-  width: 220px;
-  max-width: 100%;
-}
-
-.avatar-circle {
-  width: 220px;
-  height: 220px;
-  max-width: 100%;
+.home-photo-box img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
   border-radius: 50%;
-  object-fit: cover;
   display: block;
-  border: 3px solid var(--line);
+  margin: 0 auto;
+  border: 3px solid var(--surface);
 }
 
-html[data-theme="dark"] .avatar-circle {
-  border-color: var(--line);
-}
-
-.portrait-title .profile-name {
-  font-family: var(--font-heading);
-  font-size: 1.375rem;
+.home-intro h1 {
+  font-size: 1.35rem;
   font-weight: 700;
-  margin: 0 0 0.35rem;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.portrait-title .profile-role {
-  margin: 0;
-  font-family: var(--font-heading);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-.portrait-title .profile-role--sub {
-  margin-top: 0.2rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-.bio-column .bio-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
-  font-weight: 700;
-  margin: 0 0 1.1rem;
-  color: var(--text);
-  line-height: 1.25;
-}
-
-.bio-column p {
-  font-size: 1.015rem;
-  line-height: 1.75;
-  margin: 0 0 0.95rem;
-  color: var(--text);
-}
-
-/* —— Inner pages —— */
-.page-article {
-  max-width: 720px;
-}
-
-.page-article--cv {
-  max-width: 640px;
-}
-
-.page-article--talks {
-  max-width: 640px;
-}
-
-.page-header {
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.page-header h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.45rem, 3.2vw, 1.85rem);
-  font-weight: 700;
-  margin: 0;
+  margin: 0 0 12px;
   color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.page-header--minimal {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 1.25rem;
+.home-intro p {
+  margin: 0 0 12px;
+  max-width: 38em;
 }
 
-.page-header--cv {
-  margin-bottom: 1.25rem;
-}
-
-.page-article > p {
-  font-size: 1.015rem;
-  line-height: 1.75;
-  margin: 0 0 1rem;
-}
-
-/* —— Talks (minimal) —— */
-.talks-minimal {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.talks-minimal-item {
-  margin-bottom: 2.15rem;
-}
-
-.talks-minimal-item:last-child {
-  margin-bottom: 0;
-}
-
-.talks-minimal-title {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--text);
-}
-
-.talks-minimal-meta {
-  display: block;
-  font-size: 0.75rem;
+.whimsy-note {
+  font-size: 13px;
   color: var(--muted);
-  margin-top: 0.35rem;
-  line-height: 1.45;
-  letter-spacing: 0.01em;
+  font-style: italic;
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 12px;
+  margin: 16px 0 !important;
 }
 
-.talks-minimal-desc {
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.55;
+h2 {
+  color: var(--accent);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 26px 0 10px;
+}
+
+ul.plain-list {
+  margin: 8px 0 16px;
+  padding-left: 1.2em;
+  max-width: 40em;
+}
+
+ul.plain-list li {
+  margin-bottom: 6px;
+}
+
+/* —— Inner pages —— */
+.page-article {
+  max-width: 40em;
+}
+
+.page-article--wide {
+  max-width: 44em;
+}
+
+.page-header h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--accent);
+}
+
+.page-header--sub h1 {
   color: var(--text);
-  margin-top: 0.45rem;
-  opacity: 0.92;
 }
 
-/* —— CV —— */
-.cv-pdf-hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.5rem;
-  margin-bottom: 2.25rem;
+.cv-lead {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.btn-pdf {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
+.btn-link {
+  display: inline-block;
+  font-size: 14px;
   font-weight: 600;
-  padding: 0.65rem 1.35rem;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  padding: 8px 14px;
+  border: 2px solid var(--link);
+  color: var(--link);
   border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
+  margin-right: 10px;
+  margin-bottom: 8px;
 }
 
-.btn-pdf:hover {
-  background: var(--primary);
+.btn-link:hover {
+  background: var(--link);
   color: #fff;
   text-decoration: none;
 }
 
-html[data-theme="dark"] .btn-pdf:hover {
-  color: #1a1b1e;
+html[data-theme="dark"] .btn-link:hover {
+  color: #1e1e1e;
 }
 
-.cv-pdf-subtle {
-  font-size: 0.875rem;
-  color: var(--muted);
+/* CV summary lines */
+.cv-summary-intro {
+  font-size: 14px;
+  margin-bottom: 14px;
 }
 
-.cv-pdf-subtle:hover {
-  color: var(--primary);
+.cv-mini {
+  margin-bottom: 18px;
 }
 
-.cv-block {
-  margin-bottom: 2.25rem;
-}
-
-.cv-block:last-child {
-  margin-bottom: 0;
-}
-
-.cv-section-title {
-  font-family: var(--font-heading);
-  font-size: 0.6875rem;
+.cv-mini-title {
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 1rem;
+  font-size: 14px;
+  margin-bottom: 2px;
 }
 
-.cv-role-list {
+.cv-mini-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.cv-mini-desc {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Talks list */
+.talks-ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.cv-role {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  margin-bottom: 1.2rem;
-}
-
-.cv-role:last-child {
-  margin-bottom: 0;
-}
-
-.cv-role-title {
-  font-family: var(--font-heading);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.35;
-}
-
-.cv-role-meta {
-  font-size: 0.75rem;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.cv-role-line {
-  font-size: 0.8125rem;
+.talks-ul li {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
   line-height: 1.5;
-  color: var(--text);
-  margin-top: 0.2rem;
-  opacity: 0.95;
 }
 
-.cv-role-list--compact .cv-role {
-  margin-bottom: 0.85rem;
+.talks-ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.cv-prose {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  margin: 0;
-  color: var(--text);
-}
-
-.cv-prose--tight {
-  margin-top: 0.5rem;
-}
-
-.cv-prose--tight:first-of-type {
-  margin-top: 0;
-}
-
-.cv-label {
-  font-weight: 600;
-  color: var(--muted);
-  font-size: 0.8125rem;
-}
-
-.meta {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.pdf-frame {
-  margin-top: 1.5rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.pdf-frame iframe {
-  width: 100%;
-  height: 900px;
-  border: 0;
+.talk-title {
+  font-weight: 700;
   display: block;
+  margin-bottom: 4px;
 }
 
-code {
-  font-family: ui-monospace, "Cascadia Code", "Roboto Mono", monospace;
-  font-size: 0.9em;
-  background: var(--primary-soft);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
+.talk-sub {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Coursework by term */
+.term-block {
+  margin-bottom: 22px;
+}
+
+.term-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.course-list {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: 14px;
+}
+
+.course-list li {
+  margin-bottom: 5px;
+}
+
+/* Teaching */
+.teach-line {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.teach-list {
+  margin: 8px 0 20px;
+  padding-left: 1.2em;
+  font-size: 14px;
+}
+
+.teach-list li {
+  margin-bottom: 6px;
 }
 
 /* 404 */
-.error-page .error-code {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
+.error-page h2 {
+  font-size: 1.1rem;
   font-weight: 700;
-  margin: 0 0 0.25rem;
-  color: var(--muted);
-  line-height: 1;
+  margin: 0 0 10px;
+  color: var(--accent);
 }
 
-.error-page h2 {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 0 0 1rem;
+.error-code {
+  font-size: 2.5rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+code {
+  font-size: 0.9em;
+  background: var(--nav-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
 }
