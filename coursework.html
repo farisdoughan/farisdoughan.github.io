@@ -3,41 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        var dark =
-          t === "dark" ||
-          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
-        var r = document.documentElement;
-        if (dark) {
-          r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1a1a1a";
-        } else {
-          r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#ffffff";
-        }
-      } catch (e) {}
-    })();
-  </script>
   <title>Coursework · Faris Doughan</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon">☾</span>
-    <span class="icon-sun">☀</span>
-  </button>
-
   <div class="grid-container">
     <div class="picture">
       <div class="nav">
-        <img src="images/profile.png" height="450" alt="" width="280" decoding="async" />
+        <img src="images/profile.png" height="450" alt="" />
       </div>
     </div>
     <div class="header">
-      <h1>Coursework</h1>
+      <h1> Coursework </h1>
       <p>Full coursework in concentration-related areas, excluding general education, first-year seminar, and humanities colloquium. No grades listed.</p>
     </div>
   </div>
@@ -57,32 +34,32 @@
     </div>
     <div class="header">
       <div class="tabcontent">
-        <div class="term-label">Fall 2024</div>
-        <ul class="pull-left course-list">
+        <h4>Fall 2024</h4>
+        <ul class="pull-left">
           <li>MATH 25A — Theoretical Linear Algebra and Real Analysis I</li>
           <li>PHYSICS 15A — Introductory Mechanics and Relativity</li>
         </ul>
-        <div class="term-label">Spring 2025</div>
-        <ul class="pull-left course-list">
+        <h4>Spring 2025</h4>
+        <ul class="pull-left">
           <li>MATH 55B — Studies in Real and Complex Analysis</li>
           <li>PHYSICS 15B — Introductory Electromagnetism</li>
         </ul>
-        <div class="term-label">Fall 2025</div>
-        <ul class="pull-left course-list">
+        <h4>Fall 2025</h4>
+        <ul class="pull-left">
           <li>APMTH 210 — Algebraic Fundamentals of Representing Data</li>
           <li>COMPSCI 1210 — Introduction to Theoretical Computer Science</li>
           <li>MATH 136 — Differential Geometry</li>
           <li>STAT 210 — Probability I</li>
         </ul>
-        <div class="term-label">Spring 2026</div>
-        <ul class="pull-left course-list">
+        <h4>Spring 2026</h4>
+        <ul class="pull-left">
           <li>COMPSCI 2253 — Seminar on Pseudorandomness &amp; High-Dimensional Expanders</li>
           <li>MATH 155R — Combinatorics</li>
           <li>STAT 111 — Introduction to Statistical Inference</li>
           <li>STAT 212 — Probability II — stochastic processes</li>
         </ul>
-        <div class="term-label">Fall 2026 (planned)</div>
-        <ul class="pull-left course-list">
+        <h4>Fall 2026 (planned)</h4>
+        <ul class="pull-left">
           <li>APMTH 205 — Advanced Scientific Computing: Numerical Methods</li>
           <li>MATH 114 — Analysis of Function Spaces, Measure and Integration</li>
           <li>MATH 269Z — Stochastic Analysis and Its Applications</li>
@@ -91,7 +68,5 @@
       </div>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

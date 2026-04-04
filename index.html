@@ -3,46 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        var dark =
-          t === "dark" ||
-          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
-        var r = document.documentElement;
-        if (dark) {
-          r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1a1a1a";
-        } else {
-          r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#ffffff";
-        }
-      } catch (e) {}
-    })();
-  </script>
   <meta name="description" content="Faris Doughan — Harvard undergraduate." />
   <title>Faris Doughan</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon">☾</span>
-    <span class="icon-sun">☀</span>
-  </button>
-
   <div class="grid-container">
     <div class="picture">
       <div class="nav">
-        <img src="images/profile.png" height="450" alt="Faris Doughan" width="280" decoding="async" />
+        <img src="images/profile.png" height="450" alt="Faris Doughan" />
       </div>
     </div>
     <div class="header">
-      <h1>Faris Doughan</h1>
+      <h1> Faris Doughan </h1>
       <p>
         I am a sophomore at Harvard College studying Mathematics and Statistics, with a secondary in Computer Science.
       </p>
-      <p class="whimsy-note">
+      <p>
         (I haven't narrowed things down too much yet — ask me again in a year and you'll probably get a different list.)
       </p>
     </div>
@@ -90,7 +67,5 @@
       </div>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

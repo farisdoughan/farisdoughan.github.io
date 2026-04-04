@@ -1,0 +1,108 @@
+/* From https://github.com/seigal/seigal.github.io/blob/main/main.css
+   Multi-page site: navigation uses <a class="tablinks"> styled like Seigal’s <button class="tablinks">. */
+
+body {
+  font-family: "Arial", sans-serif;
+  position: left;
+  font-size: 16px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "picture header header";
+  grid-gap: 5px;
+  padding: 5px;
+}
+
+.grid-container > div {
+  padding: 10px 0;
+}
+
+.picture {
+  grid-area: picture;
+}
+
+.header {
+  grid-area: header;
+}
+
+.nav {
+  line-height: 30px;
+  background-color: #eeeeee;
+  height: 450px;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.break {
+  grid-area: break;
+}
+
+.main {
+  position: relative;
+}
+
+.tab {
+  padding: 10px;
+  float: left;
+}
+
+.tab button,
+.tab a.tablinks {
+  display: block;
+  background-color: #eeeeee;
+  color: black;
+  padding: 10px 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.tab a.tablinks:visited {
+  color: black;
+}
+
+.tab button:hover,
+.tab a.tablinks:hover {
+  background-color: #ddd;
+}
+
+.tab button.active,
+.tab a.tablinks.active {
+  background-color: #c6d8ec;
+}
+
+.tabcontent {
+  border-left: none;
+  font-size: 16px;
+}
+
+h2 {
+  color: green;
+}
+
+h4 {
+  margin-bottom: -1em;
+}
+
+ul {
+  position: relative;
+  left: 5px;
+}
+
+p {
+  margin-right: 2cm;
+}
+
+li {
+  margin-right: 2.2cm;
+}

@@ -3,41 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        var dark =
-          t === "dark" ||
-          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
-        var r = document.documentElement;
-        if (dark) {
-          r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1a1a1a";
-        } else {
-          r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#ffffff";
-        }
-      } catch (e) {}
-    })();
-  </script>
   <title>CV · Faris Doughan</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon">☾</span>
-    <span class="icon-sun">☀</span>
-  </button>
-
   <div class="grid-container">
     <div class="picture">
       <div class="nav">
-        <img src="images/profile.png" height="450" alt="" width="280" decoding="async" />
+        <img src="images/profile.png" height="450" alt="" />
       </div>
     </div>
     <div class="header">
-      <h1>CV</h1>
+      <h1> CV </h1>
       <p>Here is my <a href="cv.pdf" target="_blank" rel="noopener">CV</a> [opens in a new tab].</p>
     </div>
   </div>
@@ -59,39 +36,22 @@
       <div class="tabcontent">
         <p>A very short summary of what I have been up to:</p>
 
-        <div class="cv-mini">
-          <div class="cv-mini-title">Undergraduate researcher</div>
-          <div class="cv-mini-meta">Harvard SEAS · Cambridge, MA</div>
-          <div class="cv-mini-desc">Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.</div>
-        </div>
+        <h4>Undergraduate researcher</h4>
+        <p>Harvard SEAS · Cambridge, MA<br />Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.</p>
 
-        <div class="cv-mini">
-          <div class="cv-mini-title">Course assistant</div>
-          <div class="cv-mini-meta">Harvard Mathematics · Cambridge, MA</div>
-          <div class="cv-mini-desc">I like to teach. See the <a href="teaching.html">teaching</a> page for courses and details.</div>
-        </div>
+        <h4>Course assistant</h4>
+        <p>Harvard Mathematics · Cambridge, MA<br />I like to teach. See the <a href="teaching.html">teaching</a> page for courses and details.</p>
 
-        <div class="cv-mini">
-          <div class="cv-mini-title">Teaching assistant</div>
-          <div class="cv-mini-meta">Harvard Data Science Initiative · Cambridge, MA</div>
-          <div class="cv-mini-desc">Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).</div>
-        </div>
+        <h4>Teaching assistant</h4>
+        <p>Harvard Data Science Initiative · Cambridge, MA<br />Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).</p>
 
-        <div class="cv-mini">
-          <div class="cv-mini-title">Harvard Student Agencies — tutor</div>
-          <div class="cv-mini-meta">Sep 2025 — present · Cambridge, MA</div>
-          <div class="cv-mini-desc">SAT and math tutoring for high school students.</div>
-        </div>
+        <h4>Harvard Student Agencies — tutor</h4>
+        <p>Sep 2025 — present · Cambridge, MA<br />SAT and math tutoring for high school students.</p>
 
-        <div class="cv-mini">
-          <div class="cv-mini-title">Library technology &amp; digital reserves</div>
-          <div class="cv-mini-meta">Harvard Library Assistive Technology Center · Cambridge, MA</div>
-          <div class="cv-mini-desc">Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.</div>
-        </div>
+        <h4>Library technology &amp; digital reserves</h4>
+        <p>Harvard Library Assistive Technology Center · Cambridge, MA<br />Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.</p>
       </div>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
