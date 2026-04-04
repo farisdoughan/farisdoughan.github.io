@@ -12,6 +12,11 @@ body {
   padding: 5px;
 }
 
+/* Lower block: keep tab column and main column top-aligned; reserve height so switching tabs does not shift the start of the text. */
+.grid-container--tabs {
+  align-items: start;
+}
+
 .grid-container > div {
   padding: 10px 0;
 }
@@ -83,9 +88,18 @@ body {
   background-color: #c6d8ec;
 }
 
+.tab-content-shell {
+  /* min-height set by script to tallest .tabcontent so switching tabs does not move the column */
+  width: 100%;
+}
+
 .tabcontent {
   border-left: none;
   font-size: 16px;
+}
+
+.tabcontent > h2:first-child {
+  margin-top: 0;
 }
 
 h2 {
