@@ -1,42 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --link: #0000ee;
+  --link-visited: #551a8b;
+  --panel: #eeeeee;
+  --panel-hover: #dddddd;
+  --panel-active: #c6d8ec;
+  --h2-green: green;
+  --nav-muted: #555;
+}
+
+html {
+  color-scheme: light;
+  background-color: var(--bg);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1a1a1a;
+  --text: #eaeaea;
+  --link: #8ab4f8;
+  --link-visited: #c58af9;
+  --panel: #2d2d2d;
+  --panel-hover: #3d3d3d;
+  --panel-active: #1e3a5f;
+  --h2-green: #7dce82;
+  --nav-muted: #b0b0b0;
+}
+
 body {
   font-family: "Arial", sans-serif;
-  position: left;
+  position: relative;
   font-size: 16px;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+/* Two columns: fixed-width rail + fluid text (clearer than three implicit columns). */
 .grid-container {
   display: grid;
-  grid-template-areas:
-    "picture header header";
+  grid-template-areas: "picture header";
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
   grid-gap: 5px;
   padding: 5px;
+  max-width: 100%;
 }
 
-/* Lower block: keep tab column and main column top-aligned; reserve height so switching tabs does not shift the start of the text. */
 .grid-container--tabs {
   align-items: start;
 }
 
 .grid-container > div {
   padding: 10px 0;
+  min-width: 0;
 }
 
 .picture {
   grid-area: picture;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .header {
   grid-area: header;
+  min-width: 0;
 }
 
 .nav {
   line-height: 30px;
-  background-color: #eeeeee;
+  background-color: var(--panel);
   height: 450px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 8px;
-  margin: 10px;
-  box-sizing: border-box;
+  margin: 10px auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +103,7 @@ body {
   text-align: center;
   font-size: 15px;
   line-height: 1.4;
-  color: #555;
+  color: var(--nav-muted);
 }
 
 .break {
@@ -63,39 +116,44 @@ body {
 
 .tab {
   padding: 10px;
-  float: left;
+  float: none;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .tab button {
   display: block;
-  background-color: #eeeeee;
-  color: black;
+  background-color: var(--panel);
+  color: var(--text);
   padding: 10px 10px;
   width: 100%;
   border: none;
   outline: none;
   text-align: left;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
   font-size: 16px;
+  font-family: Arial, sans-serif;
 }
 
 .tab button:hover {
-  background-color: #ddd;
+  background-color: var(--panel-hover);
 }
 
 .tab button.active {
-  background-color: #c6d8ec;
+  background-color: var(--panel-active);
 }
 
 .tab-content-shell {
-  /* min-height set by script to tallest .tabcontent so switching tabs does not move the column */
   width: 100%;
+  max-width: 100%;
 }
 
 .tabcontent {
   border-left: none;
   font-size: 16px;
+  max-width: 100%;
 }
 
 .tabcontent > h2:first-child {
@@ -103,7 +161,7 @@ body {
 }
 
 h2 {
-  color: green;
+  color: var(--h2-green);
 }
 
 h4 {
@@ -113,12 +171,129 @@ h4 {
 ul {
   position: relative;
   left: 5px;
+  margin-right: 0;
+  padding-left: 1.25em;
+  max-width: 100%;
 }
 
 p {
-  margin-right: 2cm;
+  margin-right: min(2cm, 4vw);
+  max-width: 100%;
 }
 
 li {
-  margin-right: 2.2cm;
+  margin-right: min(2.2cm, 4vw);
+  margin-bottom: 0.25em;
+}
+
+/* Theme toggle — fixed top right */
+.theme-toggle {
+  position: fixed;
+  top: max(8px, env(safe-area-inset-top, 0px));
+  right: max(8px, env(safe-area-inset-right, 0px));
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--panel-hover);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background: var(--panel-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 1;
+}
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 0;
+}
+html:not([data-theme="dark"]) .theme-toggle .icon-sun {
+  opacity: 0;
+}
+html:not([data-theme="dark"]) .theme-toggle .icon-moon {
+  opacity: 1;
+}
+
+/* Narrow screens: single column, full-width panels, tappable nav */
+@media (max-width: 767px) {
+  .grid-container {
+    grid-template-areas:
+      "picture"
+      "header";
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nav {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 140px;
+    max-height: 280px;
+    margin: 8px 0;
+    padding: 12px;
+  }
+
+  .tab {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  .tab button {
+    flex: 1 1 calc(50% - 4px);
+    min-width: calc(50% - 4px);
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  p,
+  li {
+    margin-right: 0;
+  }
+
+  ul {
+    left: 0;
+    padding-left: 1.5em;
+  }
+
+  .grid-container > div {
+    padding: 6px 0;
+  }
+
+  /* Keep headline clear of the theme button */
+  .grid-container:first-of-type .header {
+    padding-right: 48px;
+  }
 }
