@@ -3,58 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2962ff" />
   <title>CV · Faris Doughan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="site-shell">
-    <aside class="sidebar" aria-label="Site">
-      <div class="sidebar-header">
+  <nav class="site-navbar" aria-label="Main navigation">
+    <div class="container navbar-row">
+      <a class="navbar-brand" href="index.html">Faris Doughan</a>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="papers.html">Papers</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <div class="navbar-actions">
         <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <span class="icon-moon">☾</span>
           <span class="icon-sun">☀</span>
         </button>
       </div>
-      <a href="index.html" class="sidebar-name">Faris Doughan</a>
-      <div class="sidebar-photo">
-        <img
-          class="sidebar-img"
-          src="profile.jpg"
-          alt=""
-          width="220"
-          height="275"
-          loading="lazy"
-          onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
-        />
-        <div class="photo-placeholder" hidden>Photo: add profile.jpg</div>
-      </div>
-      <nav class="sidebar-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="papers.html">Papers</a>
-        <a href="projects.html">Projects</a>
-        <a href="talks.html">Talks</a>
-        <a href="cv.html" class="active">CV</a>
-        <a href="blog.html">Blog</a>
-      </nav>
-    </aside>
-
-    <div class="content-area">
-      <main class="page">
-        <div class="page-inner page-inner--wide">
-          <h1>CV</h1>
-          <p>
-            When your CV is finalized, add <code>cv.pdf</code> to the repository root. It will appear
-            in the frame below. Until then, see the <a href="index.html">home page</a> and
-            <a href="talks.html">talks</a> for background.
-          </p>
-
-          <div class="pdf-frame">
-            <iframe src="cv.pdf" title="CV PDF"></iframe>
-          </div>
-        </div>
-      </main>
     </div>
-  </div>
+  </nav>
+
+  <main class="site-main">
+    <div class="container section-pad">
+      <article class="page-article">
+        <header class="page-header">
+          <h1>CV</h1>
+        </header>
+        <p>
+          When your CV is finalized, add <code>cv.pdf</code> to the repository root. It will appear
+          in the frame below. Until then, see the <a href="index.html">home page</a> and
+          <a href="talks.html">talks</a> for background.
+        </p>
+
+        <div class="pdf-frame">
+          <iframe src="cv.pdf" title="CV PDF"></iframe>
+        </div>
+      </article>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
