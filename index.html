@@ -58,19 +58,19 @@
 
   <main class="site-main">
     <div class="container section-pad">
+      <div class="home-sheet">
       <div class="home-grid">
         <aside class="profile-card" aria-label="Profile">
           <div class="avatar-wrap">
             <img
               class="avatar-circle"
-              src="profile.png"
-              alt=""
+              src="images/profile.png"
+              alt="Faris Doughan"
               width="220"
               height="220"
-              loading="lazy"
-              onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
+              decoding="async"
+              fetchpriority="high"
             />
-            <div class="photo-placeholder" hidden>Photo: add profile.png</div>
           </div>
           <div class="portrait-title">
             <p class="profile-name">Faris Doughan</p>
@@ -105,6 +105,7 @@
             notes and writing on interesting topics.
           </p>
         </div>
+      </div>
       </div>
     </div>
   </main>
