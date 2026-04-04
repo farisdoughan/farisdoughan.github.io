@@ -1,34 +1,29 @@
-/* Minimal academic vibe inspired by https://github.com/seigal/seigal.github.io —
-   separate pages, Arial-scale type, small whimsical touches. */
+/*
+  Layout and type closely follow Anna Seigal’s site:
+  https://github.com/seigal/seigal.github.io/blob/main/main.css
+  Multi-page: tab buttons are plain <a href="..."> links to separate HTML files.
+*/
 
 :root {
-  --accent: #2e7d32;
-  --accent-soft: rgba(46, 125, 50, 0.12);
-  --link: #1565c0;
-  --link-hover: #0d47a1;
-  --bg: #fafafa;
-  --surface: #ffffff;
-  --text: #1a1a1a;
-  --muted: #555;
-  --line: #ddd;
-  --nav-bg: #eeeeee;
-  --nav-hover: #ddd;
-  --nav-active: #c6d8ec;
+  --seigal-green: green;
+  --panel: #eeeeee;
+  --panel-hover: #dddddd;
+  --panel-active: #c6d8ec;
+  --text: #000000;
+  --link: #0000ee;
+  --link-visited: #551a8b;
+  --body-bg: #ffffff;
 }
 
 html[data-theme="dark"] {
-  --accent: #81c784;
-  --accent-soft: rgba(129, 199, 132, 0.15);
-  --link: #90caf9;
-  --link-hover: #bbdefb;
-  --bg: #1e1e1e;
-  --surface: #252525;
-  --text: #ececec;
-  --muted: #b0b0b0;
-  --line: #404040;
-  --nav-bg: #2d2d2d;
-  --nav-hover: #3d3d3d;
-  --nav-active: #37474f;
+  --seigal-green: #7dce82;
+  --panel: #2d2d2d;
+  --panel-hover: #3d3d3d;
+  --panel-active: #455a64;
+  --text: #f0f0f0;
+  --link: #8ab4ff;
+  --link-visited: #c58af9;
+  --body-bg: #1a1a1a;
 }
 
 * {
@@ -36,8 +31,7 @@ html[data-theme="dark"] {
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: var(--bg);
+  background-color: var(--body-bg);
   color-scheme: light;
 }
 
@@ -47,364 +41,281 @@ html[data-theme="dark"] {
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-  transition: color 0.12s ease;
-  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  position: relative;
+  color: var(--text);
+  background: var(--body-bg);
+  line-height: 1.5;
 }
 
 a {
   color: var(--link);
-  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited);
 }
 
 a:hover {
-  color: var(--link-hover);
   text-decoration: underline;
 }
 
-.container {
-  width: 100%;
-  max-width: 920px;
+/* Seigal grid */
+.grid-container {
+  display: grid;
+  grid-template-areas: "picture header header";
+  grid-template-columns: auto 1fr;
+  grid-gap: 5px;
+  padding: 5px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 12px max(16px, 3vw) 48px;
 }
 
-/* —— Nav (simple bar) —— */
-.site-navbar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 50;
+.grid-container > div {
+  padding: 10px 0;
 }
 
-.navbar-row {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 10px max(16px, 3vw);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-  justify-content: space-between;
+.picture {
+  grid-area: picture;
 }
 
-.navbar-brand {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--text);
+.header {
+  grid-area: header;
 }
 
-.navbar-brand:hover {
-  color: var(--accent);
-  text-decoration: none;
+/* Photo panel */
+.nav {
+  line-height: 30px;
+  background-color: var(--panel);
+  min-height: 200px;
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
-.navbar-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex: 1;
-  justify-content: center;
+.nav img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
-.navbar-nav a {
+/* Vertical “tabs” = links to other pages (same width as photo panel) */
+.tab {
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+.tab .tablinks {
   display: block;
-  padding: 6px 9px;
-  font-size: 14px;
-  color: var(--muted);
-  border-radius: 3px;
+  background-color: var(--panel);
+  color: var(--text);
+  padding: 10px 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-bottom: 0;
 }
 
-.navbar-nav a:hover {
-  background: var(--nav-hover);
-  color: var(--text);
+.tab .tablinks:hover {
+  background-color: var(--panel-hover);
   text-decoration: none;
 }
 
-.navbar-nav a.active {
-  background: var(--nav-active);
-  color: var(--text);
-  font-weight: 600;
+.tab .tablinks.active {
+  background-color: var(--panel-active);
 }
 
-.theme-toggle {
+.tabcontent {
+  border-left: none;
+  font-size: 16px;
+}
+
+/* Seigal typography */
+h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  color: var(--text);
+}
+
+h2 {
+  color: var(--seigal-green);
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+}
+
+h4 {
+  margin-bottom: -1em;
+}
+
+p {
+  margin-right: 2cm;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+ul.pull-left,
+ul.seigal-list {
   position: relative;
+  left: 5px;
+  margin-right: 2cm;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-right: 2.2cm;
+  margin-bottom: 0.35em;
+}
+
+.whimsy-note {
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.cv-inline-actions {
+  margin: 1em 0;
+}
+
+.cv-inline-actions .tablinks {
+  display: inline-block;
+  width: auto;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 14px;
+}
+
+.cv-mini {
+  margin-bottom: 1.1em;
+}
+
+.cv-mini-title {
+  font-weight: bold;
+  margin-bottom: 0.15em;
+}
+
+.cv-mini-meta {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 0.25em;
+}
+
+.cv-mini-desc {
+  font-size: 15px;
+  margin-right: 2cm;
+}
+
+.term-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.35em;
+}
+
+.course-list {
+  margin-top: 0;
+  margin-right: 2cm;
+}
+
+.talks-ul {
+  list-style: none;
+  padding-left: 0;
+  margin-right: 2cm;
+}
+
+.talks-ul li {
+  margin-bottom: 1.25em;
+  margin-right: 0;
+  list-style: none;
+}
+
+.talk-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.talk-sub {
+  font-size: 14px;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 0.35em;
+}
+
+/* Dark / light toggle — not on Seigal’s site; kept minimal */
+.seigal-theme {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 9999;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
+  border: 1px solid var(--panel-hover);
+  border-radius: 4px;
+  background: var(--panel);
   color: var(--text);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1;
 }
 
-.icon-sun,
-.icon-moon {
+.seigal-theme .icon-sun,
+.seigal-theme .icon-moon {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 0.15s ease;
 }
 
-html[data-theme="dark"] .icon-sun {
+html[data-theme="dark"] .seigal-theme .icon-sun {
   opacity: 1;
 }
-html[data-theme="dark"] .icon-moon {
+html[data-theme="dark"] .seigal-theme .icon-moon {
   opacity: 0;
 }
-html:not([data-theme="dark"]) .icon-sun {
+html:not([data-theme="dark"]) .seigal-theme .icon-sun {
   opacity: 0;
 }
-html:not([data-theme="dark"]) .icon-moon {
+html:not([data-theme="dark"]) .seigal-theme .icon-moon {
   opacity: 1;
 }
 
-/* —— Home (Seigal-ish grid) —— */
-.home-top {
-  display: grid;
-  gap: 20px;
-  align-items: start;
-  margin-bottom: 28px;
-}
-
-@media (min-width: 700px) {
-  .home-top {
-    grid-template-columns: 260px 1fr;
-    gap: 28px;
+/* Narrow screens: stack like a single column */
+@media (max-width: 720px) {
+  .grid-container {
+    grid-template-areas:
+      "picture"
+      "header";
+    grid-template-columns: 1fr;
   }
-}
 
-.home-photo-box {
-  background: var(--nav-bg);
-  padding: 12px;
-  border: 1px solid var(--line);
-  text-align: center;
-}
+  .nav {
+    width: auto;
+    margin: 10px 5px;
+  }
 
-.home-photo-box img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  border: 3px solid var(--surface);
-}
+  .tab {
+    float: none;
+  }
 
-.home-intro h1 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0 0 12px;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.home-intro p {
-  margin: 0 0 12px;
-  max-width: 38em;
-}
-
-.whimsy-note {
-  font-size: 13px;
-  color: var(--muted);
-  font-style: italic;
-  border-left: 3px solid var(--accent-soft);
-  padding-left: 12px;
-  margin: 16px 0 !important;
-}
-
-h2 {
-  color: var(--accent);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 26px 0 10px;
-}
-
-ul.plain-list {
-  margin: 8px 0 16px;
-  padding-left: 1.2em;
-  max-width: 40em;
-}
-
-ul.plain-list li {
-  margin-bottom: 6px;
-}
-
-/* —— Inner pages —— */
-.page-article {
-  max-width: 40em;
-}
-
-.page-article--wide {
-  max-width: 44em;
-}
-
-.page-header h1 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0 0 14px;
-  color: var(--accent);
-}
-
-.page-header--sub h1 {
-  color: var(--text);
-}
-
-.cv-lead {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.btn-link {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border: 2px solid var(--link);
-  color: var(--link);
-  border-radius: 4px;
-  margin-right: 10px;
-  margin-bottom: 8px;
-}
-
-.btn-link:hover {
-  background: var(--link);
-  color: #fff;
-  text-decoration: none;
-}
-
-html[data-theme="dark"] .btn-link:hover {
-  color: #1e1e1e;
-}
-
-/* CV summary lines */
-.cv-summary-intro {
-  font-size: 14px;
-  margin-bottom: 14px;
-}
-
-.cv-mini {
-  margin-bottom: 18px;
-}
-
-.cv-mini-title {
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 2px;
-}
-
-.cv-mini-meta {
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-
-.cv-mini-desc {
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-/* Talks list */
-.talks-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.talks-ul li {
-  margin-bottom: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.talks-ul li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.talk-title {
-  font-weight: 700;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.talk-sub {
-  font-size: 12px;
-  color: var(--muted);
-  display: block;
-  margin-bottom: 6px;
-}
-
-/* Coursework by term */
-.term-block {
-  margin-bottom: 22px;
-}
-
-.term-label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.course-list {
-  margin: 0;
-  padding-left: 1.15em;
-  font-size: 14px;
-}
-
-.course-list li {
-  margin-bottom: 5px;
-}
-
-/* Teaching */
-.teach-line {
-  font-size: 14px;
-  margin-bottom: 14px;
-}
-
-.teach-list {
-  margin: 8px 0 20px;
-  padding-left: 1.2em;
-  font-size: 14px;
-}
-
-.teach-list li {
-  margin-bottom: 6px;
-}
-
-/* 404 */
-.error-page h2 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 10px;
-  color: var(--accent);
-}
-
-.error-code {
-  font-size: 2.5rem;
-  color: var(--muted);
-  margin: 0 0 8px;
-}
-
-code {
-  font-size: 0.9em;
-  background: var(--nav-bg);
-  padding: 0.1em 0.35em;
-  border-radius: 3px;
+  p,
+  li,
+  ul.pull-left,
+  ul.seigal-list,
+  .talks-ul,
+  .cv-mini-desc {
+    margin-right: 0;
+  }
 }

@@ -13,64 +13,58 @@
         var r = document.documentElement;
         if (dark) {
           r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1e1e1e";
+          r.style.backgroundColor = "#1a1a1a";
         } else {
           r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#fafafa";
+          r.style.backgroundColor = "#ffffff";
         }
       } catch (e) {}
     })();
   </script>
-  <meta
-    name="description"
-    content="Faris Doughan — Harvard undergraduate in Mathematics and Statistics."
-  />
+  <meta name="description" content="Faris Doughan — Harvard undergraduate." />
   <title>Faris Doughan</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="site-navbar" aria-label="Main navigation">
-    <div class="navbar-row">
-      <a class="navbar-brand" href="index.html">Faris Doughan</a>
-      <ul class="navbar-nav">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="papers.html">Papers</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="talks.html">Talks</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="coursework.html">Coursework</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="icon-moon">☾</span>
-        <span class="icon-sun">☀</span>
-      </button>
-    </div>
-  </nav>
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon">☾</span>
+    <span class="icon-sun">☀</span>
+  </button>
 
-  <main class="container">
-    <div class="home-top">
-      <div class="home-photo-box">
-        <img
-          src="images/profile.png"
-          alt="Faris Doughan"
-          width="220"
-          height="220"
-          decoding="async"
-          fetchpriority="high"
-        />
+  <div class="grid-container">
+    <div class="picture">
+      <div class="nav">
+        <img src="images/profile.png" height="450" alt="Faris Doughan" width="280" decoding="async" />
       </div>
-      <div class="home-intro">
-        <h1>Faris Doughan</h1>
-        <p>
-          I am a sophomore at Harvard College studying Mathematics and Statistics, with a secondary in Computer Science.
-        </p>
-        <p class="whimsy-note">
-          (I haven't narrowed things down too much yet — ask me again in a year and you'll probably get a different list.)
-        </p>
+    </div>
+    <div class="header">
+      <h1>Faris Doughan</h1>
+      <p>
+        I am a sophomore at Harvard College studying Mathematics and Statistics, with a secondary in Computer Science.
+      </p>
+      <p class="whimsy-note">
+        (I haven't narrowed things down too much yet — ask me again in a year and you'll probably get a different list.)
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="picture">
+      <div class="tab">
+        <a href="index.html" class="tablinks active">Home</a>
+        <a href="papers.html" class="tablinks">Papers</a>
+        <a href="projects.html" class="tablinks">Projects</a>
+        <a href="talks.html" class="tablinks">Talks</a>
+        <a href="teaching.html" class="tablinks">Teaching</a>
+        <a href="coursework.html" class="tablinks">Coursework</a>
+        <a href="cv.html" class="tablinks">CV</a>
+        <a href="blog.html" class="tablinks">Blog</a>
+      </div>
+    </div>
+    <div class="header">
+      <div class="tabcontent">
         <p>As an undergraduate, I haven't narrowed down my interests too much, but a few directions I like to think about:</p>
-        <ul class="plain-list">
+        <ul class="pull-left">
           <li>The mathematics behind probability and statistics</li>
           <li>Stochastic processes, PDEs, and analysis</li>
           <li>ML theory and the mathematics of data science</li>
@@ -84,18 +78,18 @@
           <a href="blog.html">blog</a>. For a résumé-style list of roles, see the
           <a href="cv.html">CV</a>.
         </p>
+
+        <h2>Bio</h2>
+        <p>
+          I am originally from Jordan, where I graduated from <strong>King's Academy</strong> in 2024 before coming to Harvard.
+          For a long time I thought I would be an engineer or a physicist; somewhere along the way I realized I liked pure math more.
+        </p>
+        <p>
+          If you plan to visit Jordan (or already have), feel free to reach out — I am always happy to chat or share recommendations.
+        </p>
       </div>
     </div>
-
-    <h2>Bio</h2>
-    <p>
-      I am originally from Jordan, where I graduated from <strong>King's Academy</strong> in 2024 before coming to Harvard.
-      For a long time I thought I would be an engineer or a physicist; somewhere along the way I realized I liked pure math more.
-    </p>
-    <p>
-      If you plan to visit Jordan (or already have), feel free to reach out — I am always happy to chat or share recommendations.
-    </p>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

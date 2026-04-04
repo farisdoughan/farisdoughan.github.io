@@ -13,10 +13,10 @@
         var r = document.documentElement;
         if (dark) {
           r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1e1e1e";
+          r.style.backgroundColor = "#1a1a1a";
         } else {
           r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#fafafa";
+          r.style.backgroundColor = "#ffffff";
         }
       } catch (e) {}
     })();
@@ -25,68 +25,72 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="site-navbar" aria-label="Main navigation">
-    <div class="navbar-row">
-      <a class="navbar-brand" href="index.html">Faris Doughan</a>
-      <ul class="navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="papers.html">Papers</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="talks.html">Talks</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="coursework.html">Coursework</a></li>
-        <li><a href="cv.html" class="active">CV</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="icon-moon">☾</span>
-        <span class="icon-sun">☀</span>
-      </button>
-    </div>
-  </nav>
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon">☾</span>
+    <span class="icon-sun">☀</span>
+  </button>
 
-  <main class="container page-article">
-    <header class="page-header page-header--sub">
+  <div class="grid-container">
+    <div class="picture">
+      <div class="nav">
+        <img src="images/profile.png" height="450" alt="" width="280" decoding="async" />
+      </div>
+    </div>
+    <div class="header">
       <h1>CV</h1>
-    </header>
-
-    <p class="cv-lead">
-      <a class="btn-link" href="cv.pdf" target="_blank" rel="noopener">Open full CV (PDF)</a>
-      <span style="font-size: 13px; color: var(--muted)">opens in a new tab — no automatic download</span>
-    </p>
-
-    <p class="cv-summary-intro">A very short summary of what I have been up to:</p>
-
-    <div class="cv-mini">
-      <div class="cv-mini-title">Undergraduate researcher</div>
-      <div class="cv-mini-meta">Harvard SEAS · Cambridge, MA</div>
-      <div class="cv-mini-desc">Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.</div>
+      <p>Here is my <a href="cv.pdf" target="_blank" rel="noopener">CV</a> [opens in a new tab].</p>
     </div>
+  </div>
 
-    <div class="cv-mini">
-      <div class="cv-mini-title">Course assistant</div>
-      <div class="cv-mini-meta">Harvard Mathematics · Cambridge, MA</div>
-      <div class="cv-mini-desc">I like to teach. See the <a href="teaching.html">teaching</a> page for courses and details.</div>
+  <div class="grid-container">
+    <div class="picture">
+      <div class="tab">
+        <a href="index.html" class="tablinks">Home</a>
+        <a href="papers.html" class="tablinks">Papers</a>
+        <a href="projects.html" class="tablinks">Projects</a>
+        <a href="talks.html" class="tablinks">Talks</a>
+        <a href="teaching.html" class="tablinks">Teaching</a>
+        <a href="coursework.html" class="tablinks">Coursework</a>
+        <a href="cv.html" class="tablinks active">CV</a>
+        <a href="blog.html" class="tablinks">Blog</a>
+      </div>
     </div>
+    <div class="header">
+      <div class="tabcontent">
+        <p>A very short summary of what I have been up to:</p>
 
-    <div class="cv-mini">
-      <div class="cv-mini-title">Teaching assistant</div>
-      <div class="cv-mini-meta">Harvard Data Science Initiative · Cambridge, MA</div>
-      <div class="cv-mini-desc">Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).</div>
-    </div>
+        <div class="cv-mini">
+          <div class="cv-mini-title">Undergraduate researcher</div>
+          <div class="cv-mini-meta">Harvard SEAS · Cambridge, MA</div>
+          <div class="cv-mini-desc">Generalized diffusion models — advised by Dr.&nbsp;John Vastola and Prof.&nbsp;Sam Gershman.</div>
+        </div>
 
-    <div class="cv-mini">
-      <div class="cv-mini-title">Harvard Student Agencies — tutor</div>
-      <div class="cv-mini-meta">Sep 2025 — present · Cambridge, MA</div>
-      <div class="cv-mini-desc">SAT and math tutoring for high school students.</div>
-    </div>
+        <div class="cv-mini">
+          <div class="cv-mini-title">Course assistant</div>
+          <div class="cv-mini-meta">Harvard Mathematics · Cambridge, MA</div>
+          <div class="cv-mini-desc">I like to teach. See the <a href="teaching.html">teaching</a> page for courses and details.</div>
+        </div>
 
-    <div class="cv-mini">
-      <div class="cv-mini-title">Library technology &amp; digital reserves</div>
-      <div class="cv-mini-meta">Harvard Library Assistive Technology Center · Cambridge, MA</div>
-      <div class="cv-mini-desc">Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.</div>
+        <div class="cv-mini">
+          <div class="cv-mini-title">Teaching assistant</div>
+          <div class="cv-mini-meta">Harvard Data Science Initiative · Cambridge, MA</div>
+          <div class="cv-mini-desc">Workshop series on generative AI for PhD students and postdocs (LLMs, Hugging Face, embeddings, RAG, agents, ethics).</div>
+        </div>
+
+        <div class="cv-mini">
+          <div class="cv-mini-title">Harvard Student Agencies — tutor</div>
+          <div class="cv-mini-meta">Sep 2025 — present · Cambridge, MA</div>
+          <div class="cv-mini-desc">SAT and math tutoring for high school students.</div>
+        </div>
+
+        <div class="cv-mini">
+          <div class="cv-mini-title">Library technology &amp; digital reserves</div>
+          <div class="cv-mini-meta">Harvard Library Assistive Technology Center · Cambridge, MA</div>
+          <div class="cv-mini-desc">Digital remediation: accessible PDFs, OCR, and LaTeX workflows for STEM materials.</div>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -13,10 +13,10 @@
         var r = document.documentElement;
         if (dark) {
           r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1e1e1e";
+          r.style.backgroundColor = "#1a1a1a";
         } else {
           r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#fafafa";
+          r.style.backgroundColor = "#ffffff";
         }
       } catch (e) {}
     })();
@@ -25,33 +25,42 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="site-navbar" aria-label="Main navigation">
-    <div class="navbar-row">
-      <a class="navbar-brand" href="index.html">Faris Doughan</a>
-      <ul class="navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="papers.html">Papers</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="talks.html">Talks</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="coursework.html">Coursework</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-      </ul>
-      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="icon-moon">☾</span>
-        <span class="icon-sun">☀</span>
-      </button>
-    </div>
-  </nav>
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon">☾</span>
+    <span class="icon-sun">☀</span>
+  </button>
 
-  <main class="container page-article">
-    <header class="page-header page-header--sub">
+  <div class="grid-container">
+    <div class="picture">
+      <div class="nav">
+        <img src="images/profile.png" height="450" alt="" width="280" decoding="async" />
+      </div>
+    </div>
+    <div class="header">
       <h1>Blog</h1>
-    </header>
-    <p>Notes and half-formed ideas from coursework, research, and things I read.</p>
-    <p>Eventually this might grow into longer posts (maybe even LaTeX-heavy ones).</p>
-  </main>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="picture">
+      <div class="tab">
+        <a href="index.html" class="tablinks">Home</a>
+        <a href="papers.html" class="tablinks">Papers</a>
+        <a href="projects.html" class="tablinks">Projects</a>
+        <a href="talks.html" class="tablinks">Talks</a>
+        <a href="teaching.html" class="tablinks">Teaching</a>
+        <a href="coursework.html" class="tablinks">Coursework</a>
+        <a href="cv.html" class="tablinks">CV</a>
+        <a href="blog.html" class="tablinks active">Blog</a>
+      </div>
+    </div>
+    <div class="header">
+      <div class="tabcontent">
+        <p>Notes and half-formed ideas from coursework, research, and things I read.</p>
+        <p>Eventually this might grow into longer posts (maybe even LaTeX-heavy ones).</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

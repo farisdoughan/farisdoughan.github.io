@@ -13,10 +13,10 @@
         var r = document.documentElement;
         if (dark) {
           r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#1e1e1e";
+          r.style.backgroundColor = "#1a1a1a";
         } else {
           r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#fafafa";
+          r.style.backgroundColor = "#ffffff";
         }
       } catch (e) {}
     })();
@@ -25,51 +25,57 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="site-navbar" aria-label="Main navigation">
-    <div class="navbar-row">
-      <a class="navbar-brand" href="index.html">Faris Doughan</a>
-      <ul class="navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="papers.html">Papers</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="talks.html" class="active">Talks</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="coursework.html">Coursework</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="icon-moon">☾</span>
-        <span class="icon-sun">☀</span>
-      </button>
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon">☾</span>
+    <span class="icon-sun">☀</span>
+  </button>
+
+  <div class="grid-container">
+    <div class="picture">
+      <div class="nav">
+        <img src="images/profile.png" height="450" alt="" width="280" decoding="async" />
+      </div>
     </div>
-  </nav>
-
-  <main class="container page-article">
-    <header class="page-header page-header--sub">
+    <div class="header">
       <h1>Talks</h1>
-    </header>
+    </div>
+  </div>
 
-    <ul class="talks-ul">
-      <li>
-        <span class="talk-title">Distribution and asymptotic limit behavior in the Robinson–Schensted correspondence</span>
-        <span class="talk-sub">Apr 2026 · Math 155R · Algebraic combinatorics · Cambridge, MA</span>
-        Combinatorial algorithm for random permutations and its distribution. <em>Video to be uploaded when available.</em>
-      </li>
-      <li>
-        <span class="talk-title">Random walks on simplicial complexes and expansion properties</span>
-        <span class="talk-sub">Mar 2026 · CS 2253 · Graduate seminar on high-dimensional expanders · Cambridge, MA</span>
-        Higher-dimensional random walks and connections to theoretical computer science.
-      </li>
-      <li>
-        <span class="talk-title">Guest lecture — Stat 111 (Introduction to Statistical Inference)</span>
-        <span class="talk-sub">Spring 2026 · Harvard · Cambridge, MA</span>
-        Topics from the course with a guest perspective.
-        <a href="media/stat111-hdx.mp4" target="_blank" rel="noopener">Watch the lecture here</a>
-        <!-- Replace href with your HDX URL or add media/stat111-hdx.mp4 to the repo -->
-      </li>
-    </ul>
-  </main>
+  <div class="grid-container">
+    <div class="picture">
+      <div class="tab">
+        <a href="index.html" class="tablinks">Home</a>
+        <a href="papers.html" class="tablinks">Papers</a>
+        <a href="projects.html" class="tablinks">Projects</a>
+        <a href="talks.html" class="tablinks active">Talks</a>
+        <a href="teaching.html" class="tablinks">Teaching</a>
+        <a href="coursework.html" class="tablinks">Coursework</a>
+        <a href="cv.html" class="tablinks">CV</a>
+        <a href="blog.html" class="tablinks">Blog</a>
+      </div>
+    </div>
+    <div class="header">
+      <div class="tabcontent">
+        <ul class="talks-ul">
+          <li>
+            <span class="talk-title">Distribution and asymptotic limit behavior in the Robinson–Schensted correspondence</span>
+            <span class="talk-sub">Apr 2026 · Math 155R · Algebraic combinatorics · Cambridge, MA</span>
+            Combinatorial algorithm for random permutations and its distribution. <em>Video to be uploaded when available.</em>
+          </li>
+          <li>
+            <span class="talk-title">Random walks on simplicial complexes and expansion properties</span>
+            <span class="talk-sub">Mar 2026 · CS 2253 · Graduate seminar on high-dimensional expanders · Cambridge, MA</span>
+            Higher-dimensional random walks and connections to theoretical computer science.
+          </li>
+          <li>
+            <span class="talk-title">Guest lecture — Stat 111 (Introduction to Statistical Inference)</span>
+            <span class="talk-sub">Spring 2026 · Harvard · Cambridge, MA</span>
+            <a href="media/stat111-hdx.mp4" target="_blank" rel="noopener">Watch the lecture here</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
