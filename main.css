@@ -35,16 +35,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Inner box for the photo so % sizing is reliable (no accidental crop). */
   overflow: hidden;
 }
 
-.nav img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
+.nav-photo-placeholder {
+  margin: 0;
+  margin-right: 0;
+  padding: 0 14px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #555;
 }
 
 .break {
