@@ -2,7 +2,7 @@
   var root = document.documentElement;
 
   function paintRoot(theme) {
-    root.style.backgroundColor = theme === "dark" ? "#1a1a1a" : "#ffffff";
+    root.style.backgroundColor = theme === "dark" ? "#14141a" : "#ffffff";
   }
 
   function setTheme(theme) {

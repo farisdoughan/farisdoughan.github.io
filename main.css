@@ -12,7 +12,7 @@
   --panel: #eeeeee;
   --panel-hover: #dddddd;
   --panel-active: #c6d8ec;
-  --h2-green: green;
+  --heading-purple: #5b2c83;
   --nav-muted: #555;
 }
 
@@ -23,15 +23,15 @@ html {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #1a1a1a;
-  --text: #eaeaea;
-  --link: #8ab4f8;
-  --link-visited: #c58af9;
-  --panel: #2d2d2d;
-  --panel-hover: #3d3d3d;
-  --panel-active: #1e3a5f;
-  --h2-green: #7dce82;
-  --nav-muted: #b0b0b0;
+  --bg: #14141a;
+  --text: #eceaf2;
+  --link: #a8c4ff;
+  --link-visited: #d4b5ff;
+  --panel: #24242e;
+  --panel-hover: #32323e;
+  --panel-active: #3d2f55;
+  --heading-purple: #c9a8e8;
+  --nav-muted: #a9a5b5;
 }
 
 body {
@@ -51,7 +51,7 @@ a:visited {
   color: var(--link-visited);
 }
 
-/* Two columns: fixed-width rail + fluid text (clearer than three implicit columns). */
+/* Fixed left rail: one column width so .nav and .tab share the same horizontal alignment. */
 .grid-container {
   display: grid;
   grid-template-areas: "picture header";
@@ -65,8 +65,13 @@ a:visited {
   align-items: start;
 }
 
-.grid-container > div {
+.grid-container > .header {
   padding: 10px 0;
+  min-width: 0;
+}
+
+.grid-container > .picture {
+  padding: 10px;
   min-width: 0;
 }
 
@@ -75,6 +80,9 @@ a:visited {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
 }
 
 .header {
@@ -82,14 +90,15 @@ a:visited {
   min-width: 0;
 }
 
+/* Same inner width as Seigal (300px); margins removed — .picture padding provides side inset. */
 .nav {
   line-height: 30px;
   background-color: var(--panel);
   height: 450px;
   width: 100%;
   max-width: 300px;
-  padding: 8px;
-  margin: 10px auto;
+  padding: 10px;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +108,7 @@ a:visited {
 .nav-photo-placeholder {
   margin: 0;
   margin-right: 0;
-  padding: 0 14px;
+  padding: 0 10px;
   text-align: center;
   font-size: 15px;
   line-height: 1.4;
@@ -114,12 +123,13 @@ a:visited {
   position: relative;
 }
 
+/* Flush with .nav: identical 300px content width, no extra horizontal padding on the rail. */
 .tab {
-  padding: 10px;
-  float: none;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  float: none;
 }
 
 .tab button {
@@ -148,6 +158,8 @@ a:visited {
 .tab-content-shell {
   width: 100%;
   max-width: 100%;
+  /* Same horizontal start as intro .header text (no extra offset vs first row). */
+  padding: 0;
 }
 
 .tabcontent {
@@ -161,11 +173,12 @@ a:visited {
 }
 
 h2 {
-  color: var(--h2-green);
+  color: var(--heading-purple);
 }
 
 h4 {
-  margin-bottom: -1em;
+  margin-top: 1em;
+  margin-bottom: 0.35em;
 }
 
 ul {
@@ -186,38 +199,35 @@ li {
   margin-bottom: 0.25em;
 }
 
-/* Theme toggle — fixed top right */
-.theme-toggle {
+/* Theme toggle — same control as pre-Seigal pass: 36×36, top-right. */
+.seigal-theme {
   position: fixed;
   top: max(8px, env(safe-area-inset-top, 0px));
   right: max(8px, env(safe-area-inset-right, 0px));
   z-index: 9999;
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--panel-hover);
   border-radius: 4px;
   background: var(--panel);
   color: var(--text);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
 }
 
-.theme-toggle:hover {
+.seigal-theme:hover {
   background: var(--panel-hover);
 }
 
-.theme-toggle:focus-visible {
+.seigal-theme:focus-visible {
   outline: 2px solid var(--link);
   outline-offset: 2px;
 }
 
-.theme-toggle .icon-sun,
-.theme-toggle .icon-moon {
+.seigal-theme .icon-sun,
+.seigal-theme .icon-moon {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -225,20 +235,19 @@ li {
   pointer-events: none;
 }
 
-html[data-theme="dark"] .theme-toggle .icon-sun {
+html[data-theme="dark"] .seigal-theme .icon-sun {
   opacity: 1;
 }
-html[data-theme="dark"] .theme-toggle .icon-moon {
+html[data-theme="dark"] .seigal-theme .icon-moon {
   opacity: 0;
 }
-html:not([data-theme="dark"]) .theme-toggle .icon-sun {
+html:not([data-theme="dark"]) .seigal-theme .icon-sun {
   opacity: 0;
 }
-html:not([data-theme="dark"]) .theme-toggle .icon-moon {
+html:not([data-theme="dark"]) .seigal-theme .icon-moon {
   opacity: 1;
 }
 
-/* Narrow screens: single column, full-width panels, tappable nav */
 @media (max-width: 767px) {
   .grid-container {
     grid-template-areas:
@@ -247,22 +256,25 @@ html:not([data-theme="dark"]) .theme-toggle .icon-moon {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .nav {
+  .picture {
     width: 100%;
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .nav {
     max-width: none;
+    width: 100%;
     height: auto;
     min-height: 140px;
     max-height: 280px;
-    margin: 8px 0;
     padding: 12px;
   }
 
   .tab {
-    float: none;
-    width: 100%;
     max-width: none;
-    margin: 0;
-    padding: 8px 0;
+    width: 100%;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -288,11 +300,14 @@ html:not([data-theme="dark"]) .theme-toggle .icon-moon {
     padding-left: 1.5em;
   }
 
-  .grid-container > div {
+  .grid-container > .header {
     padding: 6px 0;
   }
 
-  /* Keep headline clear of the theme button */
+  .grid-container > .picture {
+    padding: 8px;
+  }
+
   .grid-container:first-of-type .header {
     padding-right: 48px;
   }
