@@ -189,6 +189,23 @@ ul {
   max-width: 100%;
 }
 
+/* Home intro: area headings with nested lists */
+.interests-grouped > li > strong {
+  display: block;
+  margin-bottom: 0.35em;
+}
+
+.interests-grouped > li > ul {
+  margin-top: 0;
+  margin-bottom: 0.65em;
+  left: 0;
+  padding-left: 1.35em;
+}
+
+.interests-grouped > li:last-child > ul {
+  margin-bottom: 0;
+}
+
 p {
   margin-right: min(2cm, 4vw);
   max-width: 100%;
