@@ -172,34 +172,13 @@ a:visited {
   margin-top: 0;
 }
 
-/* Talks tab */
-.talk-entry {
-  margin-bottom: 1.85em;
-  max-width: 100%;
+.talks-list li {
+  margin-bottom: 0.85em;
+  line-height: 1.45;
 }
 
-.talk-entry:last-child {
+.talks-list li:last-child {
   margin-bottom: 0;
-}
-
-/* One line: Venue/Series: Title (YYYY/MM) — e.g. MIT Probability Seminar: … (2024/12) */
-.talk-headline {
-  margin: 0 0 0.5em;
-  margin-right: min(2cm, 4vw);
-  line-height: 1.45;
-}
-
-.talk-abstract {
-  margin: 0 0 0.5em;
-  margin-right: min(2cm, 4vw);
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-.talk-note {
-  margin: 0;
-  margin-right: min(2cm, 4vw);
-  font-size: 15px;
 }
 
 h2 {
