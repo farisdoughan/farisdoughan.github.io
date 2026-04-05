@@ -182,25 +182,18 @@ a:visited {
   margin-bottom: 0;
 }
 
-.talk-title {
-  font-weight: bold;
-  margin: 0 0 0.35em;
+/* One line: Venue/Series: Title (YYYY/MM) — e.g. MIT Probability Seminar: … (2024/12) */
+.talk-headline {
+  margin: 0 0 0.5em;
   margin-right: min(2cm, 4vw);
-  line-height: 1.35;
-}
-
-.talk-meta {
-  font-size: 14px;
   line-height: 1.45;
-  margin: 0 0 0.65em;
-  margin-right: min(2cm, 4vw);
-  color: var(--text);
-  opacity: 0.88;
 }
 
 .talk-abstract {
   margin: 0 0 0.5em;
   margin-right: min(2cm, 4vw);
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 .talk-note {
