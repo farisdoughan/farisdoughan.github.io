@@ -260,6 +260,21 @@ li {
   margin-bottom: 0.25em;
 }
 
+/* Colophon — centered footer note (Cursor / design credit). */
+.site-colophon {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 1rem 1.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--nav-muted);
+}
+
+.site-colophon p {
+  margin: 0 auto;
+  max-width: 32rem;
+}
+
 /* Theme toggle — viewport top-right; plain 8px first (some UAs drop `right` if `max()`+`env()` fails). */
 #theme-toggle.seigal-theme {
   position: fixed;
