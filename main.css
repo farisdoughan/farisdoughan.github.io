@@ -70,6 +70,19 @@ a:visited {
   min-width: 0;
 }
 
+/* Tabs + two-column lists: inset from the rail and use full line width (global `li` margin-right is wide). */
+.grid-container--tabs > .header {
+  padding: 10px 1rem 10px 1.35rem;
+}
+
+.coursework-columns ul {
+  left: 0;
+}
+
+.coursework-columns li {
+  margin-right: 0;
+}
+
 .grid-container > .picture {
   padding: 10px;
   min-width: 0;
@@ -188,7 +201,7 @@ a:visited {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -389,6 +402,10 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
 
   .grid-container > .header {
     padding: 6px 0;
+  }
+
+  .grid-container--tabs > .header {
+    padding: 6px 0.75rem 6px 0.75rem;
   }
 
   .grid-container > .picture {
