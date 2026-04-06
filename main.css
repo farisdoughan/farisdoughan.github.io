@@ -90,13 +90,13 @@ a:visited {
   min-width: 0;
 }
 
-/* Photo panel: uniform scale (currently ~5% up from 270×365) */
+/* Photo panel: uniform scale */
 .nav {
   line-height: 30px;
   background-color: var(--panel);
-  height: 382px;
+  height: 401px;
   width: 100%;
-  max-width: 284px;
+  max-width: 298px;
   padding: 10px;
   margin: 0;
   display: flex;
@@ -126,7 +126,7 @@ a:visited {
 /* Same width as .nav above */
 .tab {
   width: 100%;
-  max-width: 284px;
+  max-width: 298px;
   margin: 0;
   padding: 0;
   float: none;
@@ -338,8 +338,8 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
     max-width: none;
     width: 100%;
     height: auto;
-    min-height: 119px;
-    max-height: 238px;
+    min-height: 125px;
+    max-height: 250px;
     padding: 12px;
   }
 
