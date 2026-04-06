@@ -90,11 +90,11 @@ a:visited {
   min-width: 0;
 }
 
-/* Photo panel ~10% under classic Seigal 300×450 (270×405), centered in rail */
+/* Photo panel: width 270px unchanged; height 10% below prior 405px */
 .nav {
   line-height: 30px;
   background-color: var(--panel);
-  height: 405px;
+  height: 365px;
   width: 100%;
   max-width: 270px;
   padding: 10px;
@@ -338,8 +338,8 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
     max-width: none;
     width: 100%;
     height: auto;
-    min-height: 126px;
-    max-height: 252px;
+    min-height: 113px;
+    max-height: 227px;
     padding: 12px;
   }
 
