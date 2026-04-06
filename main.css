@@ -94,9 +94,9 @@ a:visited {
 .nav {
   line-height: 30px;
   background-color: var(--panel);
-  height: 401px;
+  height: 382px;
   width: 100%;
-  max-width: 298px;
+  max-width: 284px;
   padding: 10px;
   margin: 0;
   display: flex;
@@ -126,7 +126,7 @@ a:visited {
 /* Same width as .nav above */
 .tab {
   width: 100%;
-  max-width: 298px;
+  max-width: 284px;
   margin: 0;
   padding: 0;
   float: none;
@@ -338,8 +338,8 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
     max-width: none;
     width: 100%;
     height: auto;
-    min-height: 125px;
-    max-height: 250px;
+    min-height: 119px;
+    max-height: 238px;
     padding: 12px;
   }
 
