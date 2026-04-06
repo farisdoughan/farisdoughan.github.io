@@ -208,6 +208,13 @@ a:visited {
   margin-top: 1.25em;
 }
 
+.coursework-footnote {
+  margin: 0.75em 0 0;
+  margin-right: min(2cm, 4vw);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 /* Stack only on narrow phones; tablets/desktop keep two columns */
 @media (max-width: 560px) {
   .coursework-columns {
