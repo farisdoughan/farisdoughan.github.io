@@ -181,6 +181,37 @@ a:visited {
   margin-bottom: 0;
 }
 
+/* Coursework tab: Math | Stat + CS */
+.coursework-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0 2rem;
+  align-items: start;
+  max-width: 100%;
+}
+
+.coursework-col {
+  min-width: 0;
+}
+
+.coursework-col h4:first-child {
+  margin-top: 0;
+}
+
+.coursework-col h4:not(:first-child) {
+  margin-top: 1.25em;
+}
+
+@media (max-width: 767px) {
+  .coursework-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .coursework-col h4:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
 h2 {
   color: var(--heading-purple);
 }
