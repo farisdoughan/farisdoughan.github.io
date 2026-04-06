@@ -70,19 +70,6 @@ a:visited {
   min-width: 0;
 }
 
-/* Tabs: a bit more inset on the right so content (esp. two-column rows) doesn’t hug the viewport edge. */
-.grid-container--tabs > .header {
-  padding: 10px clamp(1.5rem, 5vw, 3rem) 10px 1.25rem;
-}
-
-.coursework-columns ul {
-  left: 0;
-}
-
-.coursework-columns li {
-  margin-right: 0;
-}
-
 .grid-container > .picture {
   padding: 10px;
   min-width: 0;
@@ -203,7 +190,7 @@ a:visited {
   align-items: flex-start;
   gap: 2rem;
   width: 100%;
-  max-width: min(52rem, 100%);
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -402,10 +389,6 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
 
   .grid-container > .header {
     padding: 6px 0;
-  }
-
-  .grid-container--tabs > .header {
-    padding: 6px 1rem 6px 0.75rem;
   }
 
   .grid-container > .picture {
