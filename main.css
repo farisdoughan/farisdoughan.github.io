@@ -274,7 +274,7 @@ a:visited {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  max-width: 42rem;
+  max-width: min(52rem, 100%);
 }
 
 .work-entry {
