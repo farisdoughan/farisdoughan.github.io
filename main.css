@@ -65,6 +65,7 @@ a:visited {
 
 .grid-container--tabs {
   align-items: start;
+  padding-top: 0;
 }
 
 .grid-container > .header {
@@ -124,7 +125,7 @@ a:visited {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  margin: 0.35rem 0 0.1rem;
+  margin: 0.3rem 0 0;
   max-width: 312px;
   width: 100%;
 }
