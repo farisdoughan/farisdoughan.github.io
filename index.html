@@ -110,66 +110,46 @@
       <div id="WorkExperience" class="tabcontent" style="display:none">
         <h2>Work Experience</h2>
         <div class="work-exp">
-          <article class="work-exp__card">
-            <div class="work-exp__accent" aria-hidden="true"></div>
-            <div class="work-exp__body">
-              <div class="work-exp__top">
-                <h3 class="work-exp__title">Course Assistant</h3>
-                <p class="work-exp__meta">Harvard University · Jan 2026 - Present</p>
-              </div>
-              <ul class="work-exp__bullets">
-                <li>CA for MATH 154: Probability Theory (Spring 2026)</li>
-                <li>CA for MATH 136: Differential Geometry (Fall 2026)</li>
-              </ul>
-              <p class="work-exp__desc">Assist in lectures, hold office hours, and grade problem sets.</p>
+          <div class="work-entry">
+            <div class="work-entry__row1">
+              <span class="work-entry__title">Course Assistant</span>
+              <span class="work-entry__dates">Jan 2026 - Present</span>
             </div>
-          </article>
-          <article class="work-exp__card">
-            <div class="work-exp__accent" aria-hidden="true"></div>
-            <div class="work-exp__body">
-              <div class="work-exp__top">
-                <h3 class="work-exp__title">Teaching Assistant</h3>
-                <p class="work-exp__meta">Harvard Data Science Initiative · Feb 2026 - Present</p>
-              </div>
-              <p class="work-exp__desc">
-                TA for the “Generative AI for Graduate Students and Postdocs” workshop. Support lectures by assisting with coding and debugging (Python, Colab, APIs), developing weekly exercises, and leading review sessions.
-              </p>
+            <div class="work-entry__org">Harvard University</div>
+            <div class="work-entry__desc">CA for MATH 154: Probability Theory (Spring 2026) and MATH 136: Differential Geometry (Fall 2026). Assist in lectures, hold office hours, and grade problem sets.</div>
+          </div>
+          <div class="work-entry">
+            <div class="work-entry__row1">
+              <span class="work-entry__title">Teaching Assistant</span>
+              <span class="work-entry__dates">Feb 2026 - Present</span>
             </div>
-          </article>
-          <article class="work-exp__card">
-            <div class="work-exp__accent" aria-hidden="true"></div>
-            <div class="work-exp__body">
-              <div class="work-exp__top">
-                <h3 class="work-exp__title">Tutor</h3>
-                <p class="work-exp__meta">Harvard Student Agencies · Oct 2025 - Present</p>
-              </div>
-              <p class="work-exp__desc">SAT and STEM tutoring for high school students.</p>
+            <div class="work-entry__org">Harvard Data Science Initiative</div>
+            <div class="work-entry__desc">TA for the &ldquo;Generative AI for Graduate Students and Postdocs&rdquo; workshop. Support lectures by assisting with coding and debugging (Python, Colab, APIs), developing weekly exercises, and leading review sessions.</div>
+          </div>
+          <div class="work-entry">
+            <div class="work-entry__row1">
+              <span class="work-entry__title">Tutor</span>
+              <span class="work-entry__dates">Oct 2025 - Present</span>
             </div>
-          </article>
-          <article class="work-exp__card">
-            <div class="work-exp__accent" aria-hidden="true"></div>
-            <div class="work-exp__body">
-              <div class="work-exp__top">
-                <h3 class="work-exp__title">Digital Reserves / Technology Assistant</h3>
-                <p class="work-exp__meta">Harvard Library · Sep 2024 - Dec 2025</p>
-              </div>
-              <p class="work-exp__desc">
-                Content digitization and accessibility using OCR, LaTeX, and custom generative-AI tools, as part of the Widener Library Digital Reserves team and the FAS Assistive Technology Center. Led digital remediation of mathematics papers and books.
-              </p>
+            <div class="work-entry__org">Harvard Student Agencies</div>
+            <div class="work-entry__desc">SAT and STEM tutoring for high school students.</div>
+          </div>
+          <div class="work-entry">
+            <div class="work-entry__row1">
+              <span class="work-entry__title">Digital Reserves / Technology Assistant</span>
+              <span class="work-entry__dates">Sep 2024 - Dec 2025</span>
             </div>
-          </article>
-          <article class="work-exp__card">
-            <div class="work-exp__accent" aria-hidden="true"></div>
-            <div class="work-exp__body">
-              <div class="work-exp__top">
-                <h3 class="work-exp__title">Data Analytics Intern</h3>
-                <p class="work-exp__meta">Arab Bank · Jun 2025 - Aug 2025</p>
-              </div>
-              <p class="work-exp__desc">
-                Anomaly detection and credit card fraud using machine learning. Built dashboards for regional data reporting and analytics.
-              </p>
+            <div class="work-entry__org">Harvard Library</div>
+            <div class="work-entry__desc">Content digitization and accessibility using OCR, LaTeX, and custom generative-AI tools, as part of the Widener Library Digital Reserves team and the FAS Assistive Technology Center. Led digital remediation of mathematics papers and books.</div>
+          </div>
+          <div class="work-entry">
+            <div class="work-entry__row1">
+              <span class="work-entry__title">Data Analytics Intern</span>
+              <span class="work-entry__dates">Jun 2025 - Aug 2025</span>
             </div>
-          </article>
+            <div class="work-entry__org">Arab Bank</div>
+            <div class="work-entry__desc">Anomaly detection and credit card fraud using machine learning. Built dashboards for regional data reporting and analytics.</div>
+          </div>
         </div>
       </div>
 
@@ -297,7 +277,7 @@
         toast.textContent = msg;
         toast.classList.add("is-visible");
         clearTimeout(hideTimer);
-        hideTimer = setTimeout(hideToast, 5000);
+        hideTimer = setTimeout(hideToast, 2000);
       }
       btn.addEventListener("click", function () {
         function fallbackCopy() {
