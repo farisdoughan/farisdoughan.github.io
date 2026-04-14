@@ -87,10 +87,8 @@
       <div class="tab">
         <button type="button" class="tablinks" data-target="WorkExperience" onclick="opentab(event)">Work Experience</button>
         <button type="button" class="tablinks" data-target="Research" onclick="opentab(event)">Research</button>
-        <button type="button" class="tablinks" data-target="Papers" onclick="opentab(event)">Papers</button>
         <button type="button" class="tablinks" data-target="Projects" onclick="opentab(event)">Projects</button>
         <button type="button" class="tablinks" data-target="Talks" onclick="opentab(event)">Talks</button>
-        <button type="button" class="tablinks" data-target="Teaching" onclick="opentab(event)">Teaching</button>
         <button type="button" class="tablinks" data-target="Coursework" onclick="opentab(event)">Coursework</button>
         <button type="button" class="tablinks" data-target="Blog" onclick="opentab(event)">Blog</button>
       </div>
@@ -100,43 +98,73 @@
 
       <div id="WorkExperience" class="tabcontent" style="display:none">
         <h2>Work Experience</h2>
-        <ul class="work-timeline" aria-label="Work experience">
-          <li class="work-timeline__item">
-            <div class="work-timeline__title">Course Assistant</div>
-            <div class="work-timeline__meta">Harvard University · Jan 2026 - Present</div>
-          </li>
-          <li class="work-timeline__item">
-            <div class="work-timeline__title">Teaching Assistant</div>
-            <div class="work-timeline__meta">Harvard Data Science Initiative · Feb 2026 - Present</div>
-          </li>
-          <li class="work-timeline__item">
-            <div class="work-timeline__title">Tutor</div>
-            <div class="work-timeline__meta">Harvard Student Agencies · Oct 2025 - Present</div>
-          </li>
-          <li class="work-timeline__item">
-            <div class="work-timeline__title">Digital Reserves/Technology Assistant</div>
-            <div class="work-timeline__meta">Harvard Library · Sep 2024 - Dec 2025</div>
-          </li>
-          <li class="work-timeline__item">
-            <div class="work-timeline__title">Data Analytics Intern</div>
-            <div class="work-timeline__meta">Arab Bank · Jun 2025 - Aug 2025</div>
-          </li>
-        </ul>
+        <div class="work-exp">
+          <article class="work-exp__card">
+            <div class="work-exp__accent" aria-hidden="true"></div>
+            <div class="work-exp__body">
+              <div class="work-exp__top">
+                <h3 class="work-exp__title">Course Assistant</h3>
+                <p class="work-exp__meta">Harvard University · Jan 2026 - Present</p>
+              </div>
+              <ul class="work-exp__bullets">
+                <li>CA for MATH 154: Probability Theory (Spring 2026)</li>
+                <li>CA for MATH 136: Differential Geometry (Fall 2026)</li>
+              </ul>
+              <p class="work-exp__desc">Assist in lectures, hold office hours, and grade problem sets.</p>
+            </div>
+          </article>
+          <article class="work-exp__card">
+            <div class="work-exp__accent" aria-hidden="true"></div>
+            <div class="work-exp__body">
+              <div class="work-exp__top">
+                <h3 class="work-exp__title">Teaching Assistant</h3>
+                <p class="work-exp__meta">Harvard Data Science Initiative · Feb 2026 - Present</p>
+              </div>
+              <p class="work-exp__desc">
+                TA for the “Generative AI for Graduate Students and Postdocs” workshop. Support lectures by assisting with coding and debugging (Python, Colab, APIs), developing weekly exercises, and leading review sessions.
+              </p>
+            </div>
+          </article>
+          <article class="work-exp__card">
+            <div class="work-exp__accent" aria-hidden="true"></div>
+            <div class="work-exp__body">
+              <div class="work-exp__top">
+                <h3 class="work-exp__title">Tutor</h3>
+                <p class="work-exp__meta">Harvard Student Agencies · Oct 2025 - Present</p>
+              </div>
+              <p class="work-exp__desc">SAT and STEM tutoring for high school students.</p>
+            </div>
+          </article>
+          <article class="work-exp__card">
+            <div class="work-exp__accent" aria-hidden="true"></div>
+            <div class="work-exp__body">
+              <div class="work-exp__top">
+                <h3 class="work-exp__title">Digital Reserves / Technology Assistant</h3>
+                <p class="work-exp__meta">Harvard Library · Sep 2024 - Dec 2025</p>
+              </div>
+              <p class="work-exp__desc">
+                Content digitization and accessibility using OCR, LaTeX, and custom generative-AI tools, as part of the Widener Library Digital Reserves team and the FAS Assistive Technology Center. Led digital remediation of mathematics papers and books.
+              </p>
+            </div>
+          </article>
+          <article class="work-exp__card">
+            <div class="work-exp__accent" aria-hidden="true"></div>
+            <div class="work-exp__body">
+              <div class="work-exp__top">
+                <h3 class="work-exp__title">Data Analytics Intern</h3>
+                <p class="work-exp__meta">Arab Bank · Jun 2025 - Aug 2025</p>
+              </div>
+              <p class="work-exp__desc">
+                Anomaly detection and credit card fraud using machine learning. Built dashboards for regional data reporting and analytics.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
 
       <div id="Research" class="tabcontent" style="display:none">
         <h2>Research</h2>
         <p>Content forthcoming.</p>
-      </div>
-
-      <div id="Papers" class="tabcontent" style="display:none">
-        <h2>Papers</h2>
-        <p>
-          I am thankful you had enough faith in me to open this tab.
-        </p>
-        <p>
-          I do not have any papers (yet!), though I am looking forward to my first research project this summer and hopefully the many more to come.
-        </p>
       </div>
 
       <div id="Projects" class="tabcontent" style="display:none">
@@ -185,18 +213,6 @@
             <a href="https://youtu.be/uPHdicUATWw" target="_blank" rel="noopener">Watch here</a>.
           </li>
         </ul>
-      </div>
-
-      <div id="Teaching" class="tabcontent" style="display:none">
-        <h2>Teaching</h2>
-        <h4>Courses</h4>
-        <ul class="pull-left">
-          <li>CA for MATH 154: Probability Theory (Spring 2026)</li>
-          <li>CA for MATH 136: Differential Geometry (Fall 2026)</li>
-        </ul>
-        <p>
-          As a course assistant, I support students in lectures, hold weekly office hours, and grade problem sets.
-        </p>
       </div>
 
       <div id="Coursework" class="tabcontent" style="display:none">

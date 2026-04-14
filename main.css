@@ -14,7 +14,7 @@
   --panel-active: #c6d8ec;
   --heading-purple: #5b2c83;
   --nav-muted: #555;
-  --work-timeline-line: #c4c4ce;
+  --work-card-shadow: rgba(15, 12, 30, 0.06);
 }
 
 html {
@@ -33,7 +33,7 @@ html[data-theme="dark"] {
   --panel-active: #3d2f55;
   --heading-purple: #c9a8e8;
   --nav-muted: #a9a5b5;
-  --work-timeline-line: #4a4a58;
+  --work-card-shadow: rgba(0, 0, 0, 0.35);
 }
 
 body {
@@ -184,51 +184,135 @@ a:visited {
   margin-bottom: 0;
 }
 
-/* Work Experience: compact vertical timeline (no cards) */
-.work-timeline {
-  list-style: none;
-  margin: 0.65rem 0 0;
-  padding: 0 0 0 1.05rem;
-  border-left: 1px solid var(--work-timeline-line);
-  max-width: 34rem;
-  left: 0;
+/* Work Experience: stacked cards with accent rail */
+.work-exp {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 48rem;
 }
 
-.work-timeline__item {
-  position: relative;
-  padding: 0 0 0.9rem 0;
-  margin: 0;
+.work-exp p {
   margin-right: 0;
 }
 
-.work-timeline__item:last-child {
-  padding-bottom: 0;
+.work-exp__card {
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--panel-hover);
+  box-shadow: 0 2px 8px var(--work-card-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.work-timeline__item::before {
-  content: "";
-  position: absolute;
-  left: calc(-1.05rem - 0.5px);
-  top: 0.4em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--heading-purple);
-  box-shadow: 0 0 0 2px var(--bg);
-  transform: translateX(-50%);
+.work-exp__card:hover {
+  border-color: color-mix(in srgb, var(--heading-purple) 45%, var(--panel-hover));
+  box-shadow: 0 4px 18px var(--work-card-shadow);
+  transform: translateY(-1px);
 }
 
-.work-timeline__title {
+.work-exp__accent {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--heading-purple) 92%, #fff) 0%,
+    var(--heading-purple) 42%,
+    color-mix(in srgb, var(--heading-purple) 70%, var(--panel-hover)) 100%
+  );
+  min-height: 100%;
+}
+
+html[data-theme="dark"] .work-exp__accent {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--heading-purple) 85%, #1a1a22) 0%,
+    var(--heading-purple) 50%,
+    color-mix(in srgb, var(--heading-purple) 55%, #2a2a36) 100%
+  );
+}
+
+.work-exp__body {
+  padding: 1rem 1.2rem 1.15rem 1.25rem;
+}
+
+.work-exp__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.work-exp__title {
+  margin: 0;
+  font-size: 1.08rem;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.35;
-  margin: 0 0 0.15em;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  flex: 1 1 12rem;
 }
 
-.work-timeline__meta {
-  font-size: 0.9375rem;
-  line-height: 1.45;
+.work-exp__meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
   color: var(--nav-muted);
+  text-align: right;
+  flex: 0 1 auto;
+  white-space: nowrap;
+}
+
+.work-exp__bullets {
+  margin: 0 0 0.55rem;
+  padding-left: 1.2em;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text);
+  position: static;
+  left: auto;
+}
+
+.work-exp__bullets li {
+  margin-right: 0;
+  margin-bottom: 0.2em;
+}
+
+.work-exp__desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.58;
+  color: var(--text);
+  max-width: 42rem;
+}
+
+.work-exp__desc:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 520px) {
+  .work-exp__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-exp__meta {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+@supports not (color: color-mix(in srgb, black, white)) {
+  .work-exp__card:hover {
+    border-color: var(--heading-purple);
+  }
+
+  .work-exp__accent {
+    background: var(--heading-purple);
+  }
 }
 
 /* Coursework tab: Math | Stat + CS (flex: reliable side-by-side; grid was collapsing for some viewports) */
