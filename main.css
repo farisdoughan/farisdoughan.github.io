@@ -389,10 +389,10 @@ a:visited {
 }
 
 .coursework-footnote {
-  margin: 0.75em 0 0;
-  margin-right: min(2cm, 4vw);
-  font-size: 14px;
+  margin: 0.5em 0 0;
+  font-size: 13px;
   line-height: 1.4;
+  color: var(--nav-muted);
 }
 
 /* Stack only on narrow phones; tablets/desktop keep two columns */
@@ -574,11 +574,11 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
   }
 
   .grid-container > .header {
-    padding: 6px 12px;
+    padding: 8px 16px;
   }
 
   .grid-container > .picture {
-    padding: 8px;
+    padding: 8px 16px;
   }
 
   .grid-container:first-of-type .header {
@@ -586,6 +586,10 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
   }
 
   .grid-container--tabs > .header {
-    padding: 6px 12px;
+    padding: 8px 16px;
+  }
+
+  .grid-container--tabs > .picture {
+    padding: 8px 16px;
   }
 }
