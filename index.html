@@ -38,20 +38,18 @@
   <div class="grid-container">
     <div class="picture">
       <div class="nav">
-        <div class="nav-photo-area">
-          <p class="nav-photo-placeholder">Picture to be added.</p>
+        <p class="nav-photo-placeholder">Picture to be added.</p>
+      </div>
+      <div class="nav-contact" role="group" aria-label="Contact">
+        <div class="nav-contact__item">
+          <button type="button" class="nav-contact__btn" id="nav-email-copy" aria-label="Copy email address to clipboard" title="Copy email">
+            <svg class="nav-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </button>
+          <span class="nav-contact__toast" id="nav-email-toast" role="status" aria-live="polite"></span>
         </div>
-        <div class="nav-contact" role="group" aria-label="Contact">
-          <div class="nav-contact__item">
-            <button type="button" class="nav-contact__btn" id="nav-email-copy" aria-label="Copy email address to clipboard" title="Copy email">
-              <svg class="nav-contact__icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-            </button>
-            <span class="nav-contact__toast" id="nav-email-toast" role="status" aria-live="polite"></span>
-          </div>
-          <a class="nav-contact__btn" href="https://www.linkedin.com/in/faris-d/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)" title="LinkedIn">
-            <svg class="nav-contact__icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22 0H2C.9 0 0 .9 0 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z"></path></svg>
-          </a>
-        </div>
+        <a class="nav-contact__btn" href="https://www.linkedin.com/in/faris-d/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)" title="LinkedIn">
+          <svg class="nav-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22 0H2C.9 0 0 .9 0 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z"></path></svg>
+        </a>
       </div>
     </div>
     <div class="header">
@@ -299,7 +297,7 @@
         toast.textContent = msg;
         toast.classList.add("is-visible");
         clearTimeout(hideTimer);
-        hideTimer = setTimeout(hideToast, 2200);
+        hideTimer = setTimeout(hideToast, 5000);
       }
       btn.addEventListener("click", function () {
         function fallbackCopy() {
