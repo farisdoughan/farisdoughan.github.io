@@ -115,6 +115,12 @@ a:visited {
   object-position: top center;
 }
 
+.nav-portrait--dark  { display: none; }
+.nav-portrait--light { display: block; }
+
+[data-theme="dark"] .nav-portrait--dark  { display: block; }
+[data-theme="dark"] .nav-portrait--light { display: none; }
+
 .nav-photo-placeholder {
   margin: 0;
   margin-right: 0;
