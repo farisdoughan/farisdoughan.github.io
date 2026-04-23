@@ -379,6 +379,7 @@
       }
       document.getElementById(name).style.display = "block";
       evt.currentTarget.className += " active";
+      try { localStorage.setItem("activeTab", name); } catch (e) {}
     }
 
     function openTabByTarget(name) {
@@ -389,6 +390,14 @@
     }
 
     measureTabShell();
+
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("activeTab"); } catch (e) {}
+      if (saved && document.getElementById(saved)) {
+        openTabByTarget(saved);
+      }
+    })();
 
     var resizeTimer;
     window.addEventListener("resize", function () {

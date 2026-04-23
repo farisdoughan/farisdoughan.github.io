@@ -41,6 +41,7 @@
       flex-shrink: 0;
     }
 
+
     .viewer-back {
       display: inline-flex;
       align-items: center;
@@ -75,6 +76,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
       min-width: 0;
+      flex: 1;
+    }
+
+    .viewer-topbar .seigal-theme {
+      flex-shrink: 0;
     }
 
     .viewer-frame {
@@ -105,6 +111,10 @@
         Back
       </a>
       <span class="viewer-title" id="viewer-title"></span>
+      <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="icon-moon" aria-hidden="true">☾</span>
+        <span class="icon-sun" aria-hidden="true">☀</span>
+      </button>
     </div>
     <iframe class="viewer-frame" id="pdf-frame"></iframe>
     <div class="viewer-error" id="viewer-error" style="display:none">
@@ -112,25 +122,20 @@
     </div>
   </div>
 
+  <script src="theme.js"></script>
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
       var file = params.get("file");
       var title = params.get("title");
-      var from = params.get("from");
 
       var titleEl = document.getElementById("viewer-title");
       var frame = document.getElementById("pdf-frame");
       var errorEl = document.getElementById("viewer-error");
-      var backLink = document.getElementById("back-link");
 
       if (title) {
         titleEl.textContent = title;
         document.title = title + " — Faris Doughan";
-      }
-
-      if (from) {
-        backLink.href = "index.html#" + from;
       }
 
       if (file) {
