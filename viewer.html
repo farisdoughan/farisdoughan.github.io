@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faris Doughan</title>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        var dark =
+          t === "dark" ||
+          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+        var r = document.documentElement;
+        if (dark) {
+          r.setAttribute("data-theme", "dark");
+          r.style.backgroundColor = "#14141a";
+        } else {
+          r.removeAttribute("data-theme");
+          r.style.backgroundColor = "#ffffff";
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <style>
+    .viewer-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .viewer-topbar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--panel);
+      border-bottom: 1px solid var(--panel-hover);
+      flex-shrink: 0;
+    }
+
+    .viewer-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-family: "Arial", sans-serif;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .viewer-back:hover {
+      background: var(--panel-hover);
+      color: var(--heading-purple);
+    }
+
+    .viewer-back svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
+    .viewer-title {
+      font-family: "Arial", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    .viewer-frame {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+
+    .viewer-error {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Arial", sans-serif;
+      color: var(--nav-muted);
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer-wrapper">
+    <div class="viewer-topbar">
+      <a class="viewer-back" id="back-link" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back
+      </a>
+      <span class="viewer-title" id="viewer-title"></span>
+    </div>
+    <iframe class="viewer-frame" id="pdf-frame"></iframe>
+    <div class="viewer-error" id="viewer-error" style="display:none">
+      No file specified.
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var file = params.get("file");
+      var title = params.get("title");
+      var from = params.get("from");
+
+      var titleEl = document.getElementById("viewer-title");
+      var frame = document.getElementById("pdf-frame");
+      var errorEl = document.getElementById("viewer-error");
+      var backLink = document.getElementById("back-link");
+
+      if (title) {
+        titleEl.textContent = title;
+        document.title = title + " — Faris Doughan";
+      }
+
+      if (from) {
+        backLink.href = "index.html#" + from;
+      }
+
+      if (file) {
+        frame.src = file;
+      } else {
+        frame.style.display = "none";
+        errorEl.style.display = "flex";
+      }
+    })();
+  </script>
+</body>
+</html>
