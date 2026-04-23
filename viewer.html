@@ -24,6 +24,14 @@
   </script>
   <link rel="stylesheet" type="text/css" href="main.css" />
   <style>
+    #theme-toggle.seigal-theme {
+      position: static !important;
+      top: auto !important;
+      right: auto !important;
+      z-index: auto !important;
+    }
+  </style>
+  <style>
     .viewer-wrapper {
       display: flex;
       flex-direction: column;
@@ -77,11 +85,6 @@
       text-overflow: ellipsis;
       min-width: 0;
       flex: 1;
-    }
-
-    .viewer-topbar #theme-toggle.seigal-theme {
-      position: static;
-      flex-shrink: 0;
     }
 
     .viewer-frame {

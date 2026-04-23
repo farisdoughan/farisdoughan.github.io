@@ -406,8 +406,11 @@
       var scrollY = null;
       try { scrollY = localStorage.getItem("scrollY"); } catch (e) {}
       if (scrollY !== null) {
-        window.scrollTo(0, parseInt(scrollY, 10));
+        var target = parseInt(scrollY, 10);
         try { localStorage.removeItem("scrollY"); } catch (e) {}
+        requestAnimationFrame(function () {
+          setTimeout(function () { window.scrollTo(0, target); }, 0);
+        });
       }
     })();
 
