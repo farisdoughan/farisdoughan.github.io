@@ -397,7 +397,18 @@
       if (saved && document.getElementById(saved)) {
         openTabByTarget(saved);
       }
+
+      var scrollY = null;
+      try { scrollY = localStorage.getItem("scrollY"); } catch (e) {}
+      if (scrollY !== null) {
+        window.scrollTo(0, parseInt(scrollY, 10));
+        try { localStorage.removeItem("scrollY"); } catch (e) {}
+      }
     })();
+
+    window.addEventListener("beforeunload", function () {
+      try { localStorage.setItem("scrollY", String(window.scrollY)); } catch (e) {}
+    });
 
     var resizeTimer;
     window.addEventListener("resize", function () {
