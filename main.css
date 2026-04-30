@@ -547,9 +547,10 @@ html:not([data-theme="dark"]) #theme-toggle.seigal-theme .icon-moon {
     max-width: none;
     width: 100%;
     height: auto;
-    min-height: 131px;
-    max-height: 262px;
+    min-height: 200px;
+    max-height: 400px;
     padding: 12px;
+    aspect-ratio: 950 / 1024;
   }
 
   .nav-contact {

@@ -104,6 +104,50 @@
       color: var(--nav-muted);
       font-size: 1.1rem;
     }
+
+    .viewer-mobile-fallback {
+      display: none;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      font-family: "Arial", sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .viewer-mobile-fallback a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--heading-purple);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: opacity 0.15s ease;
+    }
+
+    .viewer-mobile-fallback a:hover {
+      opacity: 0.85;
+    }
+
+    @media (max-width: 767px) {
+      .viewer-frame {
+        display: none !important;
+      }
+      .viewer-mobile-fallback {
+        display: flex !important;
+      }
+      .viewer-topbar {
+        padding: 0.6rem 1rem;
+        gap: 0.5rem;
+      }
+      .viewer-title {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -123,6 +167,9 @@
       </button>
     </div>
     <iframe class="viewer-frame" id="pdf-frame"></iframe>
+    <div class="viewer-mobile-fallback" id="mobile-fallback">
+      <a id="mobile-pdf-link" href="#">Open PDF</a>
+    </div>
     <div class="viewer-error" id="viewer-error" style="display:none">
       No file specified.
     </div>
@@ -138,6 +185,7 @@
       var titleEl = document.getElementById("viewer-title");
       var frame = document.getElementById("pdf-frame");
       var errorEl = document.getElementById("viewer-error");
+      var mobileLink = document.getElementById("mobile-pdf-link");
 
       if (title) {
         titleEl.textContent = title;
@@ -146,6 +194,7 @@
 
       if (file) {
         frame.src = file;
+        if (mobileLink) mobileLink.href = file;
       } else {
         frame.style.display = "none";
         errorEl.style.display = "flex";
