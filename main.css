@@ -357,6 +357,24 @@ a:visited {
   opacity: 0.82;
 }
 
+.work-entry__extra {
+  grid-column: 2;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--text);
+  padding: 0 1.1rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
+}
+
+.work-entry:hover .work-entry__extra {
+  opacity: 0.72;
+  max-height: 12rem;
+  padding: 0 1.1rem 0.8rem;
+}
+
 @media (max-width: 520px) {
   .work-entry__row1 {
     flex-direction: column;
