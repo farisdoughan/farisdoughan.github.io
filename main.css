@@ -64,11 +64,10 @@ a:visited {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 0.65rem 1rem;
-  background: var(--bg);
+  padding: 0.7rem 1rem;
+  background: var(--panel);
   border-bottom: 1px solid var(--section-border);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .topnav a {
