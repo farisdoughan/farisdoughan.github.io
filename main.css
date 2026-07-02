@@ -21,6 +21,7 @@
 html {
   color-scheme: light;
   background-color: var(--bg);
+  scroll-behavior: smooth;
 }
 
 html[data-theme="dark"] {
@@ -53,6 +54,40 @@ a {
 
 a:visited {
   color: var(--link-visited);
+}
+
+/* Top navigation bar */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.65rem 1rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--section-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.topnav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.2rem 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.topnav a:visited {
+  color: var(--text);
+}
+
+.topnav a:hover {
+  opacity: 1;
+  color: var(--heading-purple);
 }
 
 /* Page wrapper — centered single column */
@@ -210,6 +245,7 @@ a:visited {
   padding-top: 2rem;
   margin-top: 1.5rem;
   border-top: 1px solid var(--section-border);
+  scroll-margin-top: 3rem;
 }
 
 .section h2 {
