@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research &#x2013; Faris Doughan</title>
+  <script>
+    (function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);var r=document.documentElement;if(d){r.setAttribute("data-theme","dark");r.style.backgroundColor="#14141a";}else{r.removeAttribute("data-theme");r.style.backgroundColor="#ffffff";}}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <span class="site-nav__sep">/</span>
+      <a href="work.html">Work Experience</a>
+      <span class="site-nav__sep">/</span>
+      <a href="teaching.html">Teaching</a>
+      <span class="site-nav__sep">/</span>
+      <a href="research.html" class="active">Research</a>
+      <span class="site-nav__sep">/</span>
+      <a href="misc.html">Misc</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <h2 class="page-title">Research</h2>
+    <hr />
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Undergraduate Researcher</span>
+        <span class="entry__dates">Apr 2026 &#x2013; Present</span>
+      </div>
+      <div class="entry__org">Gershman Computational Neuroscience Lab; Harvard Lab for AI &amp; Neurotheory</div>
+      <div class="entry__desc">
+        Working on understanding diffusion models. Advised by Dr.&nbsp;John Vastola.
+      </div>
+      <div class="entry__extra">
+        I am studying the theory of diffusion models, a class of generative models that produce new samples by learning to reverse a gradual process that adds noise to data. I am interested in the foundations of this process, using tools in probability, stochastic differential equations, and score-based modeling to help explain why these models learn meaningful data distributions and when they generalize.
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="entry">
+      <div class="entry__head">
+        <span class="entry__title">Directed Reading Program</span>
+        <span class="entry__dates">Sep 2026 &#x2013; Present</span>
+      </div>
+      <div class="entry__org">Harvard Mathematics Department</div>
+      <div class="entry__desc">
+        Free Probability and Random Matrices (Spring 2026). Mentored by Elia Gorokhovsky.<br />
+        TBD (Fall 2026).
+      </div>
+      <div class="entry__extra">
+        The Directed Reading Program pairs undergraduate students with graduate student mentors for an independent reading project in mathematics. Through regular meetings and guided reading, students study advanced topics beyond the standard undergraduate curriculum.
+      </div>
+    </div>
+
+    <hr />
+
+    <h3 class="sub">Talks</h3>
+
+    <ol class="numbered">
+      <li>
+        Approximate Eigendecompositions and Eigenstripping of High-Dimensional Expanders, Theoretical CS Reading Group with Prof.&nbsp;Salil Vadhan, 06/2026 (90 min).
+      </li>
+      <li>
+        Distribution and Asymptotic Limit Behavior in the Robinson&#x2013;Schensted Correspondence, Math 155R Combinatorics, 04/2026 (30 min).
+      </li>
+      <li>
+        Random Walks on Simplicial Complexes and Expansion Properties, CS 2253 Graduate Seminar on HDX, 03/2026 (75 min).
+        <a href="https://youtu.be/uPHdicUATWw" target="_blank" rel="noopener">Watch here</a>.
+      </li>
+    </ol>
+  </main>
+
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon" aria-hidden="true">&#x263E;</span>
+    <span class="icon-sun" aria-hidden="true">&#x2600;</span>
+  </button>
+
+  <script src="theme.js"></script>
+</body>
+</html>

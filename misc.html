@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misc &#x2013; Faris Doughan</title>
+  <script>
+    (function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);var r=document.documentElement;if(d){r.setAttribute("data-theme","dark");r.style.backgroundColor="#14141a";}else{r.removeAttribute("data-theme");r.style.backgroundColor="#ffffff";}}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <span class="site-nav__sep">/</span>
+      <a href="work.html">Work Experience</a>
+      <span class="site-nav__sep">/</span>
+      <a href="teaching.html">Teaching</a>
+      <span class="site-nav__sep">/</span>
+      <a href="research.html">Research</a>
+      <span class="site-nav__sep">/</span>
+      <a href="misc.html" class="active">Misc</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <h2 class="page-title">Misc</h2>
+    <hr />
+
+    <!-- Projects -->
+    <h3 class="sub">Projects</h3>
+    <p class="section-note">No AI was used unless stated otherwise.</p>
+
+    <h3 class="sub">Math Writings</h3>
+    <ol class="numbered">
+      <li>
+        <strong>MATH 155R</strong> (Final Project) &#x2014;
+        <a href="viewer.html?file=projects/robinson-schensted-correspondence.pdf&amp;title=On+the+%23P-Completeness+of+Counting+Linear+Extensions&amp;from=misc">On the #P-Completeness of Counting Linear Extensions</a>
+      </li>
+      <li>
+        <strong>STAT 212</strong> (Final Project) &#x2014;
+        <a href="viewer.html?file=projects/noise-stability-boolean-hypercube.pdf&amp;title=Noise+Stability+on+the+Boolean+Hypercube+via+a+Renormalized+Brownian+Motion&amp;from=misc">Noise Stability on the Boolean Hypercube via a Renormalized Brownian Motion</a>
+      </li>
+      <li>
+        <a href="viewer.html?file=projects/principal-geodesic-analysis-sphere.pdf&amp;title=Principal+Geodesic+Analysis+on+the+Sphere&amp;from=misc">Principal Geodesic Analysis on the Sphere</a>
+      </li>
+      <li>
+        <strong>MATH 136</strong> (Final Project) &#x2014;
+        <a href="viewer.html?file=projects/clairaut-geodesics-surfaces-revolution.pdf&amp;title=Clairaut%E2%80%99s+Relation+for+Geodesics+on+Surfaces+of+Revolution&amp;from=misc">Clairaut&#x2019;s Relation for Geodesics on Surfaces of Revolution</a>
+      </li>
+      <li>
+        <strong>APMTH 210</strong> (Final Project) &#x2014;
+        <a href="viewer.html?file=projects/tropical-hypersurfaces-relu-networks.pdf&amp;title=Tropical+Hypersurfaces+and+Gradient+Interpretability+in+ReLU+Networks&amp;from=misc">Tropical Hypersurfaces and Gradient Interpretability in ReLU Networks</a>
+      </li>
+    </ol>
+
+    <h3 class="sub">Coding Projects</h3>
+    <ol class="numbered">
+      <li>
+        <strong>Chinese Ethics Gen Ed</strong> (Final Project, AI-assisted) &#x2014;
+        <em>Puettinator</em>, a parody of the iconic game based on classical Chinese philosophers.
+        <a href="https://olivescorpion7849.codehs.me/" target="_blank" rel="noopener">Site</a> &#xB7;
+        <a href="https://codehs.com/sandbox/olivescorpion7849/olivescorpion7849codehsme" target="_blank" rel="noopener">Code</a>
+      </li>
+    </ol>
+
+    <hr />
+
+    <!-- Coursework -->
+    <h3 class="sub">Coursework</h3>
+    <p class="section-note">Includes Fall 2026.</p>
+
+    <div class="cw-columns">
+      <div class="cw-col">
+        <h3 class="sub">Math</h3>
+        <ul class="clean">
+          <li>MATH 25A: Theoretical Linear Algebra and Real Analysis I</li>
+          <li>MATH 55B: Studies in Real and Complex Analysis</li>
+          <li>MATH 114: Analysis of Function Spaces, Measure and Integration</li>
+          <li>MATH 136: Differential Geometry</li>
+          <li>MATH 155R: Combinatorics</li>
+          <li>MATH 269Z: Stochastic Analysis and Its Applications*</li>
+        </ul>
+        <h3 class="sub">CS</h3>
+        <ul class="clean">
+          <li>COMPSCI 1210: Introduction to Theoretical Computer Science</li>
+          <li>COMPSCI 2253: Seminar on Pseudorandomness and High-Dimensional Expanders*</li>
+        </ul>
+      </div>
+      <div class="cw-col">
+        <h3 class="sub">Stat</h3>
+        <ul class="clean">
+          <li>STAT 111: Introduction to Statistical Inference</li>
+          <li>STAT 210: Probability I*</li>
+          <li>STAT 212: Probability II&#x2014;Stochastic Processes*</li>
+        </ul>
+        <h3 class="sub">Applied Math</h3>
+        <ul class="clean">
+          <li>APMTH 205: Advanced Scientific Computing&#x2014;Numerical Methods*</li>
+          <li>APMTH 207: Stochastic Methods in Artificial Intelligence*</li>
+          <li>APMTH 210: Algebraic Fundamentals of Representing Data*</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cw-footnote">*Graduate Course</p>
+  </main>
+
+  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-moon" aria-hidden="true">&#x263E;</span>
+    <span class="icon-sun" aria-hidden="true">&#x2600;</span>
+  </button>
+
+  <script src="theme.js"></script>
+</body>
+</html>
