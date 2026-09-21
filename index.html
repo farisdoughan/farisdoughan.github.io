@@ -15,12 +15,19 @@
   <meta name="google-site-verification" content="9RFo_h9W-b304BZtHzhLS1feAUMhTcBBhmCw4G2eckg" />
   <title>Faris Doughan</title>
   <script>
-    (function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);var r=document.documentElement;if(d){r.setAttribute("data-theme","dark");r.style.backgroundColor="#14141a";}else{r.removeAttribute("data-theme");r.style.backgroundColor="#ffffff";}}catch(e){}})();
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+      var dark = saved === "dark" || (saved !== "light" && prefersDark);
+      if (dark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.backgroundColor = "#14141a";
+      }
+    })();
   </script>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-
   <header class="site-header">
     <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
     <nav class="site-nav">
@@ -39,51 +46,83 @@
   <main class="page-wrapper">
     <h2 class="page-title">About Me</h2>
     <hr />
-
     <p class="about-bio">
-      I am a junior at Harvard, concentrating in Mathematics and Statistics with a secondary in Computer Science, also pursuing the concurrent Master&#x2019;s in Applied Mathematics. I am from Jordan, where I graduated from King&#x2019;s Academy in 2024 before matriculating at Harvard.
+      I am a junior at Harvard, concentrating in Mathematics and Statistics
+      with a secondary in Computer Science, also pursuing the concurrent
+      Master&rsquo;s in Applied Mathematics. I am from Jordan, where I
+      graduated from King&rsquo;s Academy in 2024 before matriculating at
+      Harvard.
     </p>
-
     <hr />
 
     <h3 class="sub">Interests</h3>
     <ul class="clean">
-      <li><strong>Mathematics.</strong> Probability theory; stochastic processes and analysis; applications to random structures (graphs, random walks, random matrices, etc.); and related combinatorics.</li>
-      <li><strong>Statistics.</strong> High-dimensional statistics; statistical learning theory; mathematics of data.</li>
-      <li><strong>Computer Science.</strong> Theoretical computer science; computational methods across all these fields.</li>
+      <li>
+        <strong>Mathematics.</strong> Probability theory; stochastic processes
+        and analysis; applications to random structures (graphs, random walks,
+        random matrices, etc.); and related combinatorics.
+      </li>
+      <li>
+        <strong>Statistics.</strong> High-dimensional statistics; statistical
+        learning theory; mathematics of data.
+      </li>
+      <li>
+        <strong>Computer Science.</strong> Theoretical computer science;
+        computational methods across all these fields.
+      </li>
     </ul>
-
     <hr />
 
     <h3 class="sub">Contact</h3>
     <div class="contact-row">
       <span>Email:</span>
-      <button type="button" class="contact-row__copy-btn" id="nav-email-copy" title="Click to copy">Farisdoughan@college.harvard.edu</button>
-      <span class="contact-row__toast" id="nav-email-toast"></span>
-      <span>&#xB7;</span>
-      <a href="https://www.linkedin.com/in/faris-d/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button type="button" class="contact-row__copy-btn" id="copy-email"
+              title="Click to copy">Farisdoughan@college.harvard.edu</button>
+      <span class="contact-row__toast" id="copy-toast"></span>
+      <span>&middot;</span>
+      <a href="https://www.linkedin.com/in/faris-d/" target="_blank"
+         rel="noopener noreferrer">LinkedIn</a>
     </div>
   </main>
 
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+  <button type="button" class="theme-toggle" id="theme-toggle"
+          aria-label="Toggle dark mode">
     <span class="icon-moon" aria-hidden="true">&#x263E;</span>
     <span class="icon-sun" aria-hidden="true">&#x2600;</span>
   </button>
 
   <script src="theme.js"></script>
   <script>
-    (function(){
-      var COPY_EMAIL="Farisdoughan@college.harvard.edu";
-      var btn=document.getElementById("nav-email-copy");
-      var toast=document.getElementById("nav-email-toast");
-      if(!btn||!toast)return;
-      var t;
-      function show(m){toast.textContent=m;toast.classList.add("is-visible");clearTimeout(t);t=setTimeout(function(){toast.classList.remove("is-visible");},2000);}
-      btn.addEventListener("click",function(){
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(COPY_EMAIL).then(function(){show("Copied!");}).catch(function(){show("Could not copy");});
-        }else{
-          try{var a=document.createElement("textarea");a.value=COPY_EMAIL;a.style.position="fixed";a.style.left="-9999px";document.body.appendChild(a);a.select();document.execCommand("copy");document.body.removeChild(a);show("Copied!");}catch(e){show("Could not copy");}
+    (function () {
+      var email = "Farisdoughan@college.harvard.edu";
+      var btn = document.getElementById("copy-email");
+      var toast = document.getElementById("copy-toast");
+      var timer;
+
+      function flash(msg) {
+        toast.textContent = msg;
+        toast.classList.add("is-visible");
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 2000);
+      }
+
+      btn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email)
+            .then(function () { flash("Copied!"); })
+            .catch(function () { flash("Could not copy"); });
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = email;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          flash("Copied!");
         }
       });
     })();

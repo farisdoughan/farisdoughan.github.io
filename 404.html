@@ -3,46 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page not found · Faris Doughan</title>
+  <title>Page not found &ndash; Faris Doughan</title>
   <script>
     (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        var dark =
-          t === "dark" ||
-          (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
-        var r = document.documentElement;
-        if (dark) {
-          r.setAttribute("data-theme", "dark");
-          r.style.backgroundColor = "#14141a";
-        } else {
-          r.removeAttribute("data-theme");
-          r.style.backgroundColor = "#ffffff";
-        }
-      } catch (e) {}
+      var saved = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+      var dark = saved === "dark" || (saved !== "light" && prefersDark);
+      if (dark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.backgroundColor = "#14141a";
+      }
     })();
   </script>
-  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <div class="grid-container">
-    <div class="picture">
-      <div class="nav">
-        <p class="nav-photo-placeholder">Picture to be added.</p>
-      </div>
-    </div>
-    <div class="header">
-      <h1> 404 </h1>
-      <p>Page not found.</p>
-      <p><a href="index.html">Back to home</a></p>
-    </div>
-  </div>
+  <header class="site-header">
+    <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <span class="site-nav__sep">/</span>
+      <a href="work.html">Work Experience</a>
+      <span class="site-nav__sep">/</span>
+      <a href="teaching.html">Teaching</a>
+      <span class="site-nav__sep">/</span>
+      <a href="research.html">Research</a>
+      <span class="site-nav__sep">/</span>
+      <a href="misc.html">Misc</a>
+    </nav>
+  </header>
 
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-moon" aria-hidden="true">☾</span>
-    <span class="icon-sun" aria-hidden="true">☀</span>
+  <main class="page-wrapper">
+    <h2 class="page-title">404</h2>
+    <hr />
+    <p>Page not found. <a href="index.html">Go home</a>.</p>
+  </main>
+
+  <button type="button" class="theme-toggle" id="theme-toggle"
+          aria-label="Toggle dark mode">
+    <span class="icon-moon" aria-hidden="true">&#x263E;</span>
+    <span class="icon-sun" aria-hidden="true">&#x2600;</span>
   </button>
-
   <script src="theme.js"></script>
 </body>
 </html>

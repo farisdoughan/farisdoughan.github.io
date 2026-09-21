@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work Experience &#x2013; Faris Doughan</title>
+  <title>Work Experience &ndash; Faris Doughan</title>
   <script>
-    (function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);var r=document.documentElement;if(d){r.setAttribute("data-theme","dark");r.style.backgroundColor="#14141a";}else{r.removeAttribute("data-theme");r.style.backgroundColor="#ffffff";}}catch(e){}})();
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+      var dark = saved === "dark" || (saved !== "light" && prefersDark);
+      if (dark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.backgroundColor = "#14141a";
+      }
+    })();
   </script>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-
   <header class="site-header">
     <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
     <nav class="site-nav">
@@ -33,55 +40,64 @@
     <div class="entry">
       <div class="entry__head">
         <span class="entry__title">Teaching Assistant</span>
-        <span class="entry__dates">Feb 2026 &#x2013; May 2026</span>
+        <span class="entry__dates">Feb 2026 &ndash; May 2026</span>
       </div>
       <div class="entry__org">Harvard Data Science Initiative</div>
       <div class="entry__desc">
-        TA for the <a href="https://datascience.harvard.edu/education/generative-ai-for-graduate-students-and-postdocs/" target="_blank" rel="noopener">Generative AI for Graduate Students and Postdocs</a> workshop.
+        TA for the
+        <a href="https://datascience.harvard.edu/education/generative-ai-for-graduate-students-and-postdocs/"
+           target="_blank" rel="noopener">Generative AI for Graduate Students
+        and Postdocs</a> workshop.
       </div>
       <div class="entry__extra">
-        Assisted with live debugging, Python/Google Colab workflows, API usage, and coding support during lectures. Helped develop exercises and led weekly review sessions. Covered topics such as retrieval-augmented generation (RAG), local LLM use, APIs, AI ethics and responsible use, and AI for scientific research.
+        Assisted with live debugging, Python/Google Colab workflows, API usage,
+        and coding support during lectures. Helped develop exercises and led
+        weekly review sessions. Covered topics such as retrieval-augmented
+        generation (RAG), local LLM use, APIs, AI ethics and responsible use,
+        and AI for scientific research.
       </div>
     </div>
-
     <hr />
 
     <div class="entry">
       <div class="entry__head">
         <span class="entry__title">Digital Technology Assistant</span>
-        <span class="entry__dates">Sep 2024 &#x2013; Dec 2025</span>
+        <span class="entry__dates">Sep 2024 &ndash; Dec 2025</span>
       </div>
       <div class="entry__org">Harvard Library</div>
       <div class="entry__desc">
-        Content digitization and accessibility using OCR, LaTeX, etc. Led digital remediation of mathematics content.
+        Content digitization and accessibility using OCR, LaTeX, etc. Led
+        digital remediation of mathematics content.
       </div>
       <div class="entry__extra">
-        Turned physical texts and blurry PDFs into readable, accessible digital documents.
+        Turned physical texts and blurry PDFs into readable, accessible digital
+        documents.
       </div>
     </div>
-
     <hr />
 
     <div class="entry">
       <div class="entry__head">
         <span class="entry__title">Data Analytics Intern</span>
-        <span class="entry__dates">Jun 2025 &#x2013; Aug 2025</span>
+        <span class="entry__dates">Jun 2025 &ndash; Aug 2025</span>
       </div>
       <div class="entry__org">Arab Bank</div>
       <div class="entry__desc">
-        Worked on anomaly detection using machine learning, as well as regional data reporting and analytics.
+        Worked on anomaly detection using machine learning, as well as regional
+        data reporting and analytics.
       </div>
       <div class="entry__extra">
-        Tech stack: Python, pandas, NumPy, PyTorch, Qiskit, matplotlib, Power BI. A lot of feature engineering.
+        Tech stack: Python, pandas, NumPy, PyTorch, Qiskit, matplotlib,
+        Power BI. A lot of feature engineering.
       </div>
     </div>
   </main>
 
-  <button type="button" class="seigal-theme" id="theme-toggle" aria-label="Toggle dark mode">
+  <button type="button" class="theme-toggle" id="theme-toggle"
+          aria-label="Toggle dark mode">
     <span class="icon-moon" aria-hidden="true">&#x263E;</span>
     <span class="icon-sun" aria-hidden="true">&#x2600;</span>
   </button>
-
   <script src="theme.js"></script>
 </body>
 </html>
