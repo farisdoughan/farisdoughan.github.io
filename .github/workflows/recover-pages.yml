@@ -1,0 +1,15 @@
+name: Recover stuck Pages deployment
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-pages.yml'
+permissions:
+  pages: write
+jobs:
+  cancel-stuck-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel stale Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST repos/farisdoughan/farisdoughan.github.io/pages/deployments/9d75d44c78b1544806f61f62bcd3e5b259f5420a/cancel
