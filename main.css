@@ -63,6 +63,12 @@ hr {
   gap: 0.5rem 1.5rem;
 }
 
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .site-header__name {
   font-size: 1.75rem;
   font-weight: normal;
@@ -281,10 +287,8 @@ h3.sub {
 /* Theme toggle */
 
 .theme-toggle {
-  position: fixed;
-  top: 8px;
-  right: 8px;
-  z-index: 999;
+  position: relative;
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
   margin: 0;

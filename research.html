@@ -19,7 +19,14 @@
 </head>
 <body>
   <header class="site-header">
-    <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
+    <div class="site-header__brand">
+      <h1 class="site-header__name"><a href="index.html">Faris Doughan</a></h1>
+      <button type="button" class="theme-toggle" id="theme-toggle"
+              aria-label="Toggle dark mode">
+        <span class="icon-moon" aria-hidden="true">&#x263E;</span>
+        <span class="icon-sun" aria-hidden="true">&#x2600;</span>
+      </button>
+    </div>
     <nav class="site-nav">
       <a href="index.html">About</a>
       <span class="site-nav__sep">/</span>
@@ -102,11 +109,6 @@
     </ol>
   </main>
 
-  <button type="button" class="theme-toggle" id="theme-toggle"
-          aria-label="Toggle dark mode">
-    <span class="icon-moon" aria-hidden="true">&#x263E;</span>
-    <span class="icon-sun" aria-hidden="true">&#x2600;</span>
-  </button>
   <script src="theme.js"></script>
 </body>
 </html>
