@@ -64,9 +64,14 @@ hr {
 }
 
 .site-header__brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+}
+
+.site-header__brand .site-header__name {
+  white-space: nowrap;
 }
 
 .site-header__name {
